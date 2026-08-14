@@ -1,11 +1,11 @@
 const items = [
-  "Precision Agriculture",
-  "Crop Intelligence",
-  "Climate & Water Resilience",
-  "Agri Value Chain Intelligence",
-  "Peer-Reviewed Research",
-  "Field-Validated Models",
-  "Built with Agronomists",
+  "AI Solutions",
+  "Multilingual AI",
+  "Agri-Informatics",
+  "Government Solutions",
+  "Research & Innovation",
+  "Training & Internship",
+  "Inclusive AI",
 ];
 
 export default function Marquee() {

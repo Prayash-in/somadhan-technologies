@@ -4,18 +4,21 @@ const columns = [
   {
     title: "Company",
     links: [
-      { href: "/solutions", label: "Solutions" },
-      { href: "/research", label: "Research" },
-      { href: "/team", label: "Team & Careers" },
-      { href: "/blog", label: "Insights" },
+      { href: "/about", label: "About Us" },
+      { href: "/solutions", label: "AI Solutions" },
+      { href: "/agri-informatics", label: "Agri-Informatics" },
+      { href: "/government", label: "Government Solutions" },
+      { href: "/training", label: "Training & Internship" },
     ],
   },
   {
-    title: "Engage",
+    title: "Explore",
     links: [
-      { href: "/contact", label: "Contact" },
-      { href: "/contact#newsletter", label: "Newsletter" },
-      { href: "/contact#careers", label: "Careers" },
+      { href: "/research", label: "Research & Innovation" },
+      { href: "/projects", label: "Projects" },
+      { href: "/team#careers", label: "Careers" },
+      { href: "/blog", label: "News & Updates" },
+      { href: "/contact", label: "Contact Us" },
     ],
   },
 ];
@@ -28,11 +31,11 @@ export default function Footer() {
           <div>
             <Logo className="h-32" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-ink-soft">
-              A research-first AI startup building cutting-edge intelligence
-              for agriculture — from lab, to field, to market.
+              Building intelligent, multilingual and accessible technology
+              solutions for people, agriculture, government and institutions.
             </p>
             <p className="mt-6 text-xs uppercase tracking-[0.18em] text-ink-soft/70">
-              Intelligence, rooted in research.
+              Reaching the Summit of Inclusive AI
             </p>
           </div>
 
@@ -59,9 +62,7 @@ export default function Footer() {
 
         <div className="mt-14 flex flex-col gap-3 border-t border-line pt-6 text-xs text-ink-soft sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} Somadhan Technologies. All rights reserved.</p>
-          <p>
-            hello@somadhan.tech &middot; Built on research, not hype.
-          </p>
+          <p>Guwahati, Assam, India &middot; director@somadhantechnologies.in</p>
         </div>
       </div>
     </footer>

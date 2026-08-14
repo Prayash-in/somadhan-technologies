@@ -7,24 +7,14 @@ import NewsletterForm from "@/components/NewsletterForm";
 export const metadata = {
   title: "Contact",
   description:
-    "Get in touch with Somadhan Technologies — partnerships, pilots, research collaborations and careers.",
+    "Contact Somadhan Technologies — partnerships, projects, research collaborations, training and careers.",
 };
 
 const channels = [
   {
-    label: "Partnerships & pilots",
-    value: "partners@somadhan.tech",
-    href: "mailto:partners@somadhan.tech",
-  },
-  {
-    label: "Research collaboration",
-    value: "research@somadhan.tech",
-    href: "mailto:research@somadhan.tech",
-  },
-  {
-    label: "Careers",
-    value: "careers@somadhan.tech",
-    href: "mailto:careers@somadhan.tech",
+    label: "Email",
+    value: "director@somadhantechnologies.in",
+    href: "mailto:director@somadhantechnologies.in",
   },
 ];
 
@@ -33,8 +23,8 @@ export default function ContactPage() {
     <ViewTransition name="page">
       <PageHero
         eyebrow="Contact"
-        title="Let&apos;s talk about what you&apos;re growing."
-        description="Pilots, research partnerships, media or just a hard question about AI in agriculture — we read everything."
+        title="Let&apos;s Build Inclusive AI Together."
+        description="Partnerships, projects, research collaborations and training — tell us what you want to build."
       />
 
       <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
@@ -81,10 +71,11 @@ export default function ContactPage() {
                 />
                 <div className="relative">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
-                    Field notes
+                    News &amp; Updates
                   </p>
                   <h3 className="mt-4 font-display text-xl font-medium leading-snug text-paper">
-                    Two essays a month on research, models and the farm calendar.
+                    Research, projects and inclusive AI — updates worth
+                    reading.
                   </h3>
                   <div className="mt-6">
                     <NewsletterForm />
@@ -105,12 +96,10 @@ export default function ContactPage() {
                 <p className="mt-4 text-sm leading-relaxed text-ink-soft">
                   Somadhan Technologies
                   <br />
-                  Innovation Campus, [City]
-                  <br />
-                  [State], India
+                  Guwahati, Assam, India
                 </p>
                 <p className="mt-4 text-xs text-ink-soft/70">
-                  Field sites operate across multiple agro-climatic zones.
+                  Reaching the Summit of Inclusive AI.
                 </p>
               </div>
             </Reveal>

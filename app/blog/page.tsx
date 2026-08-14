@@ -6,9 +6,9 @@ import { tones } from "@/components/tone";
 import { posts } from "@/content/posts";
 
 export const metadata = {
-  title: "Insights",
+  title: "News & Updates",
   description:
-    "Essays and field notes from the Somadhan research bench — on AI, agriculture and the science that connects them.",
+    "Essays, field notes and updates from Somadhan Technologies — on AI, agriculture, language technology and the research that connects them.",
 };
 
 const tagTones: Record<string, keyof typeof tones> = {
@@ -21,7 +21,7 @@ export default function BlogPage() {
   return (
     <ViewTransition name="page">
       <PageHero
-        eyebrow="Insights"
+        eyebrow="News & Updates"
         title="Notes from the research bench."
         description="Essays and field notes on the ideas behind our work — and the field realities that shape them."
       />

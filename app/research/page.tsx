@@ -6,9 +6,9 @@ import { tones } from "@/components/tone";
 import { publications, researchSteps } from "@/content/research";
 
 export const metadata = {
-  title: "Research",
+  title: "Research & Innovation",
   description:
-    "The research program behind Somadhan Technologies — field protocols, peer-reviewed work and benchmarks.",
+    "Research that powers our solutions — applied AI research, publications and field-validated innovations at Somadhan Technologies.",
 };
 
 const stepTones = ["green", "gold", "sky", "terra"] as const;
@@ -23,9 +23,9 @@ export default function ResearchPage() {
   return (
     <ViewTransition name="page">
       <PageHero
-        eyebrow="Research"
-        title="Our work has to survive the field and the review board."
-        description="Everything we ship starts in a research program that is measured, challenged and published — because in agriculture, untested ideas cost harvests."
+        eyebrow="Research & Innovation"
+        title="Driving innovation. Delivering impact."
+        description="Research that powers our solutions — from applied AI research to publications and field-validated innovations."
       />
 
       <section className="border-b border-line">
@@ -119,10 +119,10 @@ export default function ResearchPage() {
             Full texts and datasets are shared with partners and on request.
             For collaboration or access:{" "}
             <a
-              href="mailto:research@somadhan.tech"
+              href="mailto:director@somadhantechnologies.in"
               className="font-medium text-accent hover:text-accent-deep"
             >
-              research@somadhan.tech
+              director@somadhantechnologies.in
             </a>
           </p>
         </Reveal>
@@ -135,7 +135,7 @@ export default function ResearchPage() {
             />
             <div
               aria-hidden="true"
-              className="animate-drift-b pointer-events-none absolute -left-16 -top-16 h-56 w-56 rounded-full bg-[radial-gradient(circle_at_center,rgba(168,120,31,0.3),transparent_70%)] blur-3xl"
+              className="animate-drift-b pointer-events-none absolute -left-16 -top-16 h-56 w-56 rounded-full bg-[radial-gradient(circle_at_center,rgba(168,120,31,0.3),transparent_70%)] "
             />
             <div className="relative">
               <h3 className="font-display text-2xl font-medium text-paper">

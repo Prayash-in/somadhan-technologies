@@ -3,58 +3,146 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { LeafGlyph, LanguageGlyph, BuildingGlyph } from "./glyphs";
+
+const aiChildren = [
+  {
+    href: "/agri-informatics",
+    label: "Agri-Informatics",
+    Icon: LeafGlyph,
+    tile: "bg-accent-soft text-accent-deep",
+  },
+  {
+    href: "/solutions#multilingual-ai",
+    label: "Multilingual AI",
+    Icon: LanguageGlyph,
+    tile: "bg-sky-soft text-sky-deep",
+  },
+  {
+    href: "/government",
+    label: "Government Solutions",
+    Icon: BuildingGlyph,
+    tile: "bg-terra-soft text-terra-deep",
+  },
+];
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/solutions", label: "Solutions" },
-  { href: "/research", label: "Research" },
-  { href: "/team", label: "Team" },
+  { href: "/about", label: "About Us" },
+];
+
+const linksAfter = [
+  { href: "/training", label: "Training & Internship" },
+  { href: "/research", label: "Research & Innovation" },
+  { href: "/projects", label: "Projects" },
   { href: "/blog", label: "Insights" },
 ];
+
+function isActive(pathname: string, href: string) {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(href + "/");
+}
 
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [aiOpen, setAiOpen] = useState(false);
+
+  const aiActive =
+    pathname === "/solutions" ||
+    pathname.startsWith("/solutions/") ||
+    pathname === "/agri-informatics" ||
+    pathname === "/government";
 
   return (
     <header
       style={{ viewTransitionName: "site-header" }}
-      className="sticky top-0 z-50 border-b border-line bg-paper/85 backdrop-blur-md"
+      className="sticky top-0 z-50 border-b border-line bg-paper"
     >
-      <nav className="mx-auto grid h-18 max-w-6xl grid-cols-[1fr_auto_1fr] items-center px-5 sm:px-8">
-        <div aria-hidden="true" />
+      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-5 sm:px-8">
+        <div className="hidden items-center gap-6 lg:flex xl:gap-7">
+          {links.map((link) => (
+            <NavLink
+              key={link.href}
+              href={link.href}
+              label={link.label}
+              active={isActive(pathname, link.href)}
+            />
+          ))}
 
-        <div className="hidden items-center gap-7 md:flex lg:gap-8">
-          {links.map((link) => {
-            const active =
-              link.href === "/"
-                ? pathname === "/"
-                : pathname === link.href ||
-                  pathname.startsWith(link.href + "/");
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`relative text-sm transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-accent after:transition-transform after:duration-300 hover:after:scale-x-100 ${
-                  active
-                    ? "font-medium text-accent after:scale-x-100"
-                    : "text-ink-soft hover:text-ink"
+          {/* AI Solutions dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setAiOpen(true)}
+            onMouseLeave={() => setAiOpen(false)}
+          >
+            <button
+              type="button"
+              aria-expanded={aiOpen}
+              className={`group flex items-center gap-1 text-sm transition-colors ${
+                aiActive || aiOpen ? "font-medium text-accent" : "text-ink-soft hover:text-ink"
+              }`}
+            >
+              AI Solutions
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                className={`h-3.5 w-3.5 transition-transform duration-300 ${
+                  aiOpen ? "rotate-180" : ""
                 }`}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
-                {link.label}
-              </Link>
-            );
-          })}
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+
+            <div
+              className={`absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-3 transition-all duration-200 ${
+                aiOpen
+                  ? "pointer-events-auto translate-y-0 opacity-100"
+                  : "pointer-events-none -translate-y-1 opacity-0"
+              }`}
+            >
+              <div className="overflow-hidden rounded-xl border border-line bg-white p-1.5 shadow-xl shadow-ink/10">
+                {aiChildren.map(({ href, label, Icon, tile }) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    onClick={() => setAiOpen(false)}
+                    className="group flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors hover:bg-cream"
+                  >
+                    <span
+                      className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ${tile} transition-transform duration-300 group-hover:scale-105`}
+                    >
+                      <Icon className="h-4 w-4" />
+                    </span>
+                    <span className="text-sm font-medium text-ink transition-colors group-hover:text-accent">
+                      {label}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {linksAfter.map((link) => (
+            <NavLink
+              key={link.href}
+              href={link.href}
+              label={link.label}
+              active={isActive(pathname, link.href)}
+            />
+          ))}
         </div>
 
-        <div className="flex items-center justify-end gap-3">
+        <div className="flex items-center gap-3">
           <Link
             href="/contact"
-            className={`hidden rounded-full px-5 py-2.5 text-sm font-medium text-white transition-all hover:shadow-lg hover:shadow-accent/25 md:inline-flex ${
-              pathname === "/contact"
-                ? "bg-linear-to-r from-accent-deep to-accent"
-                : "bg-linear-to-r from-accent to-moss hover:from-accent-deep hover:to-accent"
-            }`}
+            className="hidden rounded-full bg-linear-to-r from-accent to-moss px-5 py-2.5 text-sm font-medium text-white transition-all hover:shadow-lg hover:shadow-accent/25 md:inline-flex"
           >
             Contact us
           </Link>
@@ -64,7 +152,7 @@ export default function Navbar() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-line md:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-line lg:hidden"
           >
             <span className="relative block h-3 w-4">
               <span
@@ -88,18 +176,72 @@ export default function Navbar() {
       </nav>
 
       {open ? (
-        <div className="border-t border-line bg-paper px-5 pb-8 pt-4 md:hidden">
+        <div className="border-t border-line bg-paper px-5 pb-8 pt-4 lg:hidden">
           <div className="flex flex-col gap-1">
             {links.map((link) => (
-              <Link
+              <MobileLink
                 key={link.href}
                 href={link.href}
-                onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-3 text-base text-ink-soft hover:bg-cream hover:text-ink"
-              >
-                {link.label}
-              </Link>
+                label={link.label}
+                active={isActive(pathname, link.href)}
+                onNavigate={() => setOpen(false)}
+              />
             ))}
+
+            <button
+              type="button"
+              onClick={() => setAiOpen((v) => !v)}
+              aria-expanded={aiOpen}
+              className={`flex items-center justify-between rounded-lg px-3 py-3 text-base transition-colors ${
+                aiActive ? "font-medium text-accent" : "text-ink-soft hover:bg-cream hover:text-ink"
+              }`}
+            >
+              AI Solutions
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                className={`h-4 w-4 transition-transform duration-300 ${
+                  aiOpen ? "rotate-180" : ""
+                }`}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            {aiOpen ? (
+              <div className="flex flex-col gap-1 border-l-2 border-line pl-3">
+                {aiChildren.map(({ href, label, Icon, tile }) => (
+                  <Link
+                    key={href}
+                    href={href}
+                    onClick={() => setOpen(false)}
+                    className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-ink-soft hover:bg-cream hover:text-ink"
+                  >
+                    <span
+                      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${tile}`}
+                    >
+                      <Icon className="h-4 w-4" />
+                    </span>
+                    {label}
+                  </Link>
+                ))}
+              </div>
+            ) : null}
+
+            {linksAfter.map((link) => (
+              <MobileLink
+                key={link.href}
+                href={link.href}
+                label={link.label}
+                active={isActive(pathname, link.href)}
+                onNavigate={() => setOpen(false)}
+              />
+            ))}
+
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
@@ -111,5 +253,54 @@ export default function Navbar() {
         </div>
       ) : null}
     </header>
+  );
+}
+
+function NavLink({
+  href,
+  label,
+  active,
+}: {
+  href: string;
+  label: string;
+  active: boolean;
+}) {
+  return (
+    <Link
+      href={href}
+      className={`relative whitespace-nowrap text-sm transition-colors after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-accent after:transition-transform after:duration-300 hover:after:scale-x-100 ${
+        active
+          ? "font-medium text-accent after:scale-x-100"
+          : "text-ink-soft hover:text-ink"
+      }`}
+    >
+      {label}
+    </Link>
+  );
+}
+
+function MobileLink({
+  href,
+  label,
+  active,
+  onNavigate,
+}: {
+  href: string;
+  label: string;
+  active: boolean;
+  onNavigate: () => void;
+}) {
+  return (
+    <Link
+      href={href}
+      onClick={onNavigate}
+      className={`rounded-lg px-3 py-3 text-base transition-colors ${
+        active
+          ? "font-medium text-accent"
+          : "text-ink-soft hover:bg-cream hover:text-ink"
+      }`}
+    >
+      {label}
+    </Link>
   );
 }

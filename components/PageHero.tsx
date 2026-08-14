@@ -21,11 +21,11 @@ export default function PageHero({
       />
       <div
         aria-hidden="true"
-        className="animate-drift-b pointer-events-none absolute -top-24 right-[-10rem] h-80 w-80 rounded-full bg-[radial-gradient(circle_at_center,rgba(168,120,31,0.15),transparent_70%)] blur-3xl"
+        className="animate-drift-b pointer-events-none absolute -top-24 right-[-10rem] h-80 w-80 rounded-full bg-[radial-gradient(circle_at_center,rgba(168,120,31,0.15),transparent_70%)] "
       />
       <div
         aria-hidden="true"
-        className="animate-drift-a pointer-events-none absolute -top-32 left-[-10rem] h-80 w-80 rounded-full bg-[radial-gradient(circle_at_center,rgba(74,157,106,0.18),transparent_70%)] blur-3xl"
+        className="animate-drift-a pointer-events-none absolute -top-32 left-[-10rem] h-80 w-80 rounded-full bg-[radial-gradient(circle_at_center,rgba(74,157,106,0.18),transparent_70%)] "
       />
       <div className="relative mx-auto max-w-6xl px-5 pb-16 pt-20 sm:px-8 sm:pt-28">
         <Reveal>

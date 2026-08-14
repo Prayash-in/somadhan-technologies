@@ -172,47 +172,11 @@ body {
 
 /* ---------- Page view transitions ---------- */
 
-::view-transition {
-  pointer-events: none;
-}
-
-::view-transition-group(page) {
-  animation-duration: 320ms;
-}
-
-::view-transition-old(page) {
-  animation: vt-fade-out 150ms ease-in both;
-}
-
-::view-transition-new(page) {
-  animation: vt-fade-in 240ms ease-out 120ms both;
-}
-
-::view-transition-group(site-header) {
-  animation: none;
-  z-index: 100;
-}
-
-::view-transition-old(site-header) {
-  display: none;
-}
-
-::view-transition-new(site-header) {
-  animation: none;
-}
-
-@keyframes vt-fade-out {
-  to {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-}
-
-@keyframes vt-fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
+/* View-transition snapshots cross-fade old and new page text on tab
+   navigation, producing double/overlapping text in Chrome. Disable
+   capturing entirely so navigation swaps instantly. */
+* {
+  view-transition-name: none !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -223,12 +187,5 @@ body {
   .animate-float,
   .animate-spin-slow {
     animation: none;
-  }
-
-  ::view-transition-old(*),
-  ::view-transition-new(*),
-  ::view-transition-group(*) {
-    animation-duration: 0s !important;
-    animation-delay: 0s !important;
   }
 }

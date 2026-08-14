@@ -19,26 +19,27 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL("https://somadhan.tech"),
   title: {
-    default: "Somadhan Technologies — Intelligence, rooted in research",
+    default: "Somadhan Technologies — Reaching the Summit of Inclusive AI",
     template: "%s — Somadhan Technologies",
   },
   description:
-    "Somadhan Technologies is a research-first AI startup building cutting-edge solutions for agriculture — from precision farming and crop intelligence to climate resilience and value-chain analytics.",
+    "Somadhan Technologies builds intelligent, multilingual and accessible technology solutions for people, agriculture, government and institutions.",
   keywords: [
-    "Agri-tech",
+    "Inclusive AI",
+    "Multilingual AI",
+    "Agri-Informatics",
+    "Government Solutions",
+    "AI Research",
     "Artificial Intelligence",
-    "Precision Agriculture",
-    "Crop Intelligence",
-    "Research",
     "Somadhan Technologies",
   ],
   icons: {
     icon: "/logo.png",
   },
   openGraph: {
-    title: "Somadhan Technologies — Intelligence, rooted in research",
+    title: "Somadhan Technologies — Reaching the Summit of Inclusive AI",
     description:
-      "A research-first AI startup building cutting-edge solutions for agriculture.",
+      "Building intelligent, multilingual and accessible technology solutions for people, agriculture, government and institutions.",
     images: ["/logo.png"],
   },
 };

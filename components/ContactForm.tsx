@@ -84,8 +84,8 @@ export default function ContactForm() {
       </button>
       <p className="mt-4 text-xs leading-relaxed text-ink-soft/70">
         Prefer email? Write to us at{" "}
-        <a href="mailto:hello@somadhan.tech" className="font-medium text-accent hover:text-accent-deep">
-          hello@somadhan.tech
+        <a href="mailto:director@somadhantechnologies.in" className="font-medium text-accent hover:text-accent-deep">
+          director@somadhantechnologies.in
         </a>
       </p>
     </form>

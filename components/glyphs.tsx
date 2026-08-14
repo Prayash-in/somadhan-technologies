@@ -46,6 +46,29 @@ export function ChainGlyph({ className = "h-6 w-6" }: { className?: string }) {
   );
 }
 
+export function LanguageGlyph({ className = "h-6 w-6" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...stroke}>
+      <path d="M4 6h9M8.5 3.5v2.5" />
+      <path d="M6.5 6c0 4 2.5 6.5 6.5 7.5" />
+      <path d="M10 9.5C9 12 7.5 13.5 5 14.5" />
+      <rect x="13" y="12" width="8" height="8" rx="2" />
+      <path d="M14.5 16h.01M17 16h.01M14.5 18.5h.01M17 18.5h.01" />
+    </svg>
+  );
+}
+
+export function BuildingGlyph({ className = "h-6 w-6" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...stroke}>
+      <path d="M4 21V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v16" />
+      <path d="M15 9h4a1 1 0 0 1 1 1v11" />
+      <path d="M2 21h20" />
+      <path d="M7 8h.01M10 8h.01M7 12h.01M10 12h.01M7 16h.01M10 16h.01M17 13h.01M17 17h.01" />
+    </svg>
+  );
+}
+
 export function SolutionGlyph({
   id,
   className = "h-6 w-6",

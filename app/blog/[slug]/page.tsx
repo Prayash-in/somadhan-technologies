@@ -43,7 +43,7 @@ export default async function BlogPostPage({
         href="/blog"
         className="inline-flex items-center gap-2 text-sm font-medium text-accent transition-colors hover:text-accent-deep"
       >
-        <span aria-hidden="true">&larr;</span> All insights
+        <span aria-hidden="true">&larr;</span> All articles
       </Link>
 
       <header className="mt-10">
@@ -95,8 +95,9 @@ export default async function BlogPostPage({
             Written by the Somadhan Research Team
           </p>
           <p className="mt-2 text-sm leading-relaxed text-paper/70">
-            Somadhan Technologies is a research-first AI startup building
-            cutting-edge solutions for agriculture.
+            Somadhan Technologies builds intelligent, multilingual and
+            accessible technology solutions for people, agriculture,
+            government and institutions.
           </p>
         </div>
       </footer>
