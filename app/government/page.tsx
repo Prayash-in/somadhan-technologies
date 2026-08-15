@@ -50,7 +50,12 @@ export default function GovernmentPage() {
     <ViewTransition name="page">
       <PageHero
         eyebrow="Government Solutions"
-        title="Smarter public services for a better tomorrow."
+        title={
+          <>
+            Smarter public services for a{" "}
+            <em className="text-gradient animate-shimmer">better tomorrow.</em>
+          </>
+        }
         description="AI-enabled, data-driven and citizen-centric solutions for accessible and efficient governance."
       />
 
@@ -60,7 +65,9 @@ export default function GovernmentPage() {
           title={
             <>
               Solutions built for{" "}
-              <span className="text-accent">public service.</span>
+              <em className="text-gradient animate-shimmer">
+                public service.
+              </em>
             </>
           }
           description="Technology that makes government work better for the people it serves."
@@ -91,7 +98,14 @@ export default function GovernmentPage() {
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             <SectionHeading
               eyebrow="How we deliver"
-              title="Built on a few non-negotiables."
+              title={
+                <>
+                  Built on a few{" "}
+                  <em className="text-gradient animate-shimmer">
+                    non-negotiables.
+                  </em>
+                </>
+              }
             />
             <Reveal delay={0.1}>
               <div className="relative overflow-hidden rounded-2xl border border-line bg-paper p-8">

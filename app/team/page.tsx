@@ -19,7 +19,14 @@ export default function TeamPage() {
     <ViewTransition name="page">
       <PageHero
         eyebrow="Team"
-        title="Researchers who build. Builders who research."
+        title={
+          <>
+            Researchers who build.{" "}
+            <em className="text-gradient animate-shimmer">
+              Builders who research.
+            </em>
+          </>
+        }
         description="A small team at the intersection of machine learning, agronomy and engineering — and we are growing deliberately."
       />
 

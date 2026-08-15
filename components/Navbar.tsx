@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import Logo from "./Logo";
 import { LeafGlyph, LanguageGlyph, BuildingGlyph } from "./glyphs";
 
 const aiChildren = [
@@ -13,7 +14,7 @@ const aiChildren = [
     tile: "bg-accent-soft text-accent-deep",
   },
   {
-    href: "/solutions#multilingual-ai",
+    href: "/multilingual-ai",
     label: "Multilingual AI",
     Icon: LanguageGlyph,
     tile: "bg-sky-soft text-sky-deep",
@@ -49,8 +50,7 @@ export default function Navbar() {
   const [aiOpen, setAiOpen] = useState(false);
 
   const aiActive =
-    pathname === "/solutions" ||
-    pathname.startsWith("/solutions/") ||
+    pathname === "/multilingual-ai" ||
     pathname === "/agri-informatics" ||
     pathname === "/government";
 
@@ -59,15 +59,17 @@ export default function Navbar() {
       style={{ viewTransitionName: "site-header" }}
       className="sticky top-0 z-50 border-b border-line bg-paper"
     >
-      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-5 sm:px-8">
-        <div className="hidden items-center gap-6 lg:flex xl:gap-7">
-          {links.map((link) => (
-            <NavLink
-              key={link.href}
-              href={link.href}
-              label={link.label}
-              active={isActive(pathname, link.href)}
-            />
+      <nav className="mx-auto flex h-20 max-w-6xl items-center justify-between gap-6 px-5 sm:px-8">
+        <div className="flex items-center gap-6">
+          <Logo className="h-18" />
+          <div className="hidden items-center gap-6 lg:flex xl:gap-7">
+            {links.map((link) => (
+              <NavLink
+                key={link.href}
+                href={link.href}
+                label={link.label}
+                active={isActive(pathname, link.href)}
+              />
           ))}
 
           {/* AI Solutions dropdown */}
@@ -137,6 +139,7 @@ export default function Navbar() {
               active={isActive(pathname, link.href)}
             />
           ))}
+          </div>
         </div>
 
         <div className="flex items-center gap-3">

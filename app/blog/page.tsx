@@ -6,7 +6,7 @@ import { tones } from "@/components/tone";
 import { posts } from "@/content/posts";
 
 export const metadata = {
-  title: "News & Updates",
+  title: "Insights",
   description:
     "Essays, field notes and updates from Somadhan Technologies — on AI, agriculture, language technology and the research that connects them.",
 };
@@ -21,9 +21,16 @@ export default function BlogPage() {
   return (
     <ViewTransition name="page">
       <PageHero
-        eyebrow="News & Updates"
-        title="Notes from the research bench."
-        description="Essays and field notes on the ideas behind our work — and the field realities that shape them."
+        eyebrow="Insights"
+title={
+          <>
+            Ideas, notes &amp;{" "}
+            <em className="text-gradient animate-shimmer">
+              field insights.
+            </em>
+          </>
+        }
+        description="Essays, field notes and fresh perspectives on the ideas behind our work — and the realities that shape them."
       />
 
       <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">

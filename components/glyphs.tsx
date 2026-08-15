@@ -46,6 +46,27 @@ export function ChainGlyph({ className = "h-6 w-6" }: { className?: string }) {
   );
 }
 
+export function ScanGlyph({ className = "h-6 w-6" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...stroke}>
+      <path d="M3 8V5a2 2 0 0 1 2-2h3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M8 21H5a2 2 0 0 1-2-2v-3" />
+      <circle cx="12" cy="12" r="3.4" />
+      <path d="M9.8 9.8a3.4 3.4 0 0 0-1.9 4.4c.3-.5.8-.9 1.4-1.1M14.2 14.2a3.4 3.4 0 0 0 1.9-4.4c-.3.5-.8.9-1.4 1.1" />
+      <path d="M6.5 17.5c2 1 9 1 11 0" />
+    </svg>
+  );
+}
+
+export function LayersGlyph({ className = "h-6 w-6" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...stroke}>
+      <path d="M12 2.5c2.6 3.1 3.6 5 3.6 6.4a3.6 3.6 0 0 1-7.2 0C8.4 7.5 9.4 5.6 12 2.5Z" />
+      <path d="M12 12.5c2.6 3.1 3.6 5 3.6 6.4a3.6 3.6 0 0 1-7.2 0c0-1.4 1-3.3 3.6-6.4Z" />
+      <path d="M3.5 14.5c5 2 12 2 17 0M3.5 18.5c5 2 12 2 17 0" />
+    </svg>
+  );
+}
+
 export function LanguageGlyph({ className = "h-6 w-6" }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...stroke}>
@@ -58,8 +79,114 @@ export function LanguageGlyph({ className = "h-6 w-6" }: { className?: string })
   );
 }
 
-export function BuildingGlyph({ className = "h-6 w-6" }: { className?: string }) {
+export function UniversityGlyph({ className = "h-6 w-6" }: { className?: string }) {
   return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...stroke}>
+      <path d="m22 8-10-4-10 4 10 4 10-4Z" />
+      <path d="M6 10.5V16c3 1.5 9 1.5 12 0v-5.5" />
+      <path d="M22 8v5" />
+    </svg>
+  );
+}
+
+export function ResearchGlyph({ className = "h-6 w-6" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...stroke}>
+      <path d="M9.5 3h5M10 3v6l-4.6 8A2 2 0 0 0 7.2 20h9.6a2 2 0 0 0 1.8-3l-4.6-8V3" />
+      <path d="M7.5 15h9" />
+    </svg>
+  );
+}
+
+export function IndustryGlyph({ className = "h-6 w-6" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...stroke}>
+      <path d="M3 21V9l6 3.5V9l6 3.5V9l6 3.5V21" />
+      <path d="M3 21h18M7 17h.01M11 17h.01M15 17h.01" />
+    </svg>
+  );
+}
+
+export function CommunityGlyph({ className = "h-6 w-6" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...stroke}>
+      <circle cx="9" cy="8" r="3" />
+      <path d="M3.5 19a5.5 5.5 0 0 1 11 0" />
+      <circle cx="17" cy="9" r="2.4" />
+      <path d="M15.5 19a4 4 0 0 1 5.5-3.7" />
+    </svg>
+  );
+}
+
+export function VoiceGlyph({ className = "h-6 w-6" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...stroke}>
+      <path d="M12 3a3 3 0 0 1 3 3v5a3 3 0 0 1-6 0V6a3 3 0 0 1 3-3Z" />
+      <path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3M9 21h6" />
+    </svg>
+  );
+}
+
+export function TranslateGlyph({ className = "h-6 w-6" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...stroke}>
+      <path d="M3.5 5.5h7M7 3.5v2" />
+      <path d="M5.2 5.5c0 3 1.7 4.7 4.2 5.6" />
+      <path d="M7.8 8.6c-.9 1.7-2.2 2.9-3.7 3.5" />
+      <rect x="13" y="10.5" width="8" height="8" rx="2" />
+      <path d="M14.5 14.5h.01M17 14.5h.01M14.5 17h.01M17 17h.01" />
+      <path d="M3.5 20.5h4M5.5 18.5v2" />
+      <path d="M21 3.5v4" />
+    </svg>
+  );
+}
+
+export function NetworkGlyph({ className = "h-6 w-6" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...stroke}>
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M3.5 12h17M12 3.5c2.5 2.3 4 5.1 4 8.5s-1.5 6.2-4 8.5c-2.5-2.3-4-5.1-4-8.5s1.5-6.2 4-8.5Z" />
+      <circle cx="12" cy="5.2" r="1" fill="currentColor" stroke="none" />
+      <circle cx="18.8" cy="12" r="1" fill="currentColor" stroke="none" />
+      <circle cx="12" cy="18.8" r="1" fill="currentColor" stroke="none" />
+      <circle cx="5.2" cy="12" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+export function CitizenGlyph({ className = "h-6 w-6" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...stroke}>
+      <circle cx="9.5" cy="8" r="3.5" />
+      <path d="M3.5 20a6 6 0 0 1 12 0" />
+      <path d="M17.5 10.5l.9 1.9 2.1.3-1.5 1.4.4 2-1.9-1-1.9 1 .4-2-1.5-1.4 2.1-.3.9-1.9Z" />
+    </svg>
+  );
+}
+
+export function DashboardGlyph({ className = "h-6 w-6" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...stroke}>
+      <rect x="3.5" y="13" width="4" height="7.5" rx="1" />
+      <rect x="10" y="7" width="4" height="13.5" rx="1" />
+      <rect x="16.5" y="10" width="4" height="10.5" rx="1" />
+      <path d="M5 9.5 12 4l7 5.5" />
+    </svg>
+  );
+}
+
+export function DocumentGlyph({ className = "h-6 w-6" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...stroke}>
+      <path d="M6 3.5h8l4 4v13H6Z" />
+      <path d="M14 3.5v4h4" />
+      <path d="M9 12h6M9 15.5h6" />
+      <path d="M12.5 8.5V5M10 5h5" />
+    </svg>
+  );
+}
+
+export function BuildingGlyph({ className = "h-6 w-6" }: { className?: string }) {  return (
     <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...stroke}>
       <path d="M4 21V5a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v16" />
       <path d="M15 9h4a1 1 0 0 1 1 1v11" />

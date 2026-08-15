@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Reveal from "./Reveal";
 
 export default function PageHero({
@@ -6,7 +7,7 @@ export default function PageHero({
   description,
 }: {
   eyebrow: string;
-  title: string;
+  title: ReactNode;
   description?: string;
 }) {
   return (

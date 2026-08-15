@@ -23,7 +23,13 @@ export default function ContactPage() {
     <ViewTransition name="page">
       <PageHero
         eyebrow="Contact"
-        title="Let&apos;s Build Inclusive AI Together."
+        title={
+          <>
+            Let&apos;s Build{" "}
+            <em className="text-gradient animate-shimmer">Inclusive AI</em>{" "}
+            Together.
+          </>
+        }
         description="Partnerships, projects, research collaborations and training — tell us what you want to build."
       />
 
@@ -71,7 +77,7 @@ export default function ContactPage() {
                 />
                 <div className="relative">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-gold">
-                    News &amp; Updates
+                    Insights
                   </p>
                   <h3 className="mt-4 font-display text-xl font-medium leading-snug text-paper">
                     Research, projects and inclusive AI — updates worth

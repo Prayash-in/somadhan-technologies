@@ -62,7 +62,12 @@ export default function AgriInformaticsPage() {
     <ViewTransition name="page">
       <PageHero
         eyebrow="Agri-Informatics"
-        title="AI-Powered Agri-Informatics"
+        title={
+          <>
+            AI-Powered{" "}
+            <em className="text-gradient animate-shimmer">Agri-Informatics</em>
+          </>
+        }
         description="Transforming agricultural data and intelligence into actionable insights for a sustainable and productive future."
       />
 
@@ -72,7 +77,7 @@ export default function AgriInformaticsPage() {
           title={
             <>
               What we build for{" "}
-              <span className="text-accent">agriculture.</span>
+              <em className="text-gradient animate-shimmer">agriculture.</em>
             </>
           }
           description="From individual fields to entire value chains, our solutions connect data to decisions."
@@ -103,7 +108,14 @@ export default function AgriInformaticsPage() {
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             <SectionHeading
               eyebrow="How we work"
-              title="Sense. Understand. Predict. Advise."
+              title={
+                <>
+                  Sense. Understand.{" "}
+                  <em className="text-gradient animate-shimmer">
+                    Predict. Advise.
+                  </em>
+                </>
+              }
             />
             <Reveal delay={0.1}>
               <div className="relative overflow-hidden rounded-2xl border border-line bg-paper p-8">

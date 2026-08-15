@@ -24,7 +24,14 @@ export default function ResearchPage() {
     <ViewTransition name="page">
       <PageHero
         eyebrow="Research & Innovation"
-        title="Driving innovation. Delivering impact."
+        title={
+          <>
+            Driving innovation.{" "}
+            <em className="text-gradient animate-shimmer">
+              Delivering impact.
+            </em>
+          </>
+        }
         description="Research that powers our solutions — from applied AI research to publications and field-validated innovations."
       />
 
@@ -72,7 +79,8 @@ export default function ResearchPage() {
       <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
           <h2 className="font-display text-2xl font-medium tracking-tight sm:text-3xl">
-            Publications &amp; preprints
+            Publications &amp;{" "}
+            <em className="text-gradient animate-shimmer">preprints</em>
           </h2>
           <p className="text-sm text-ink-soft">
             Selected outputs from the research program.

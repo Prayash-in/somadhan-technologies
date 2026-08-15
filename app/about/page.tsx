@@ -44,7 +44,12 @@ export default function AboutPage() {
     <ViewTransition name="page">
       <PageHero
         eyebrow="About Us"
-        title="Building Technology for Real-World Impact"
+        title={
+          <>
+            Building Technology for{" "}
+            <em className="text-gradient animate-shimmer">Real-World Impact</em>
+          </>
+        }
         description="Somadhan Technologies is an AI technology and innovation organization focused on building intelligent, accessible and practical solutions for real-world challenges."
       />
 
@@ -55,7 +60,9 @@ export default function AboutPage() {
             title={
               <>
                 Where AI meets{" "}
-                <span className="text-accent">human impact.</span>
+                <em className="text-gradient animate-shimmer">
+                  human impact.
+                </em>
               </>
             }
           />
@@ -109,7 +116,14 @@ export default function AboutPage() {
           <SectionHeading
             align="center"
             eyebrow="What guides us"
-            title="Four pillars behind everything we build."
+            title={
+              <>
+                Four pillars behind{" "}
+                <em className="text-gradient animate-shimmer">
+                  everything we build.
+                </em>
+              </>
+            }
           />
           <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {pillars.map(({ title, body, Icon, tile }, i) => (
@@ -142,7 +156,9 @@ export default function AboutPage() {
             />
             <div className="relative">
               <h2 className="font-display text-3xl font-medium text-paper">
-                Let&apos;s Build Inclusive AI Together
+                Let&apos;s Build{" "}
+                <em className="text-gradient animate-shimmer">Inclusive AI</em>{" "}
+                Together
               </h2>
               <p className="mt-3 max-w-lg text-sm text-paper/70">
                 Join us in creating intelligent solutions that empower people,

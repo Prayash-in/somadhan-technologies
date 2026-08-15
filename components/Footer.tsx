@@ -5,7 +5,7 @@ const columns = [
     title: "Company",
     links: [
       { href: "/about", label: "About Us" },
-      { href: "/solutions", label: "AI Solutions" },
+      { href: "/multilingual-ai", label: "Multilingual AI" },
       { href: "/agri-informatics", label: "Agri-Informatics" },
       { href: "/government", label: "Government Solutions" },
       { href: "/training", label: "Training & Internship" },
@@ -17,7 +17,7 @@ const columns = [
       { href: "/research", label: "Research & Innovation" },
       { href: "/projects", label: "Projects" },
       { href: "/team#careers", label: "Careers" },
-      { href: "/blog", label: "News & Updates" },
+      { href: "/blog", label: "Insights" },
       { href: "/contact", label: "Contact Us" },
     ],
   },

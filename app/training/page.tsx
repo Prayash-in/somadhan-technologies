@@ -50,7 +50,12 @@ export default function TrainingPage() {
     <ViewTransition name="page">
       <PageHero
         eyebrow="Training & Internship"
-        title="Learn. Build. Innovate."
+        title={
+          <>
+            Learn. Build.{" "}
+            <em className="text-gradient animate-shimmer">Innovate.</em>
+          </>
+        }
         description="Industry-oriented training, internships and skill development programs for future-ready technology talent."
       />
 
@@ -59,7 +64,8 @@ export default function TrainingPage() {
           eyebrow="Programs"
           title={
             <>
-              Learn by <span className="text-accent">building.</span>
+              Learn by{" "}
+              <em className="text-gradient animate-shimmer">building.</em>
             </>
           }
           description="Four tracks, one philosophy — skills that survive contact with the real world."
@@ -88,7 +94,14 @@ export default function TrainingPage() {
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
             <SectionHeading
               eyebrow="How it works"
-              title="From application to real project."
+              title={
+                <>
+                  From application to{" "}
+                  <em className="text-gradient animate-shimmer">
+                    real project.
+                  </em>
+                </>
+              }
             />
             <Reveal delay={0.1}>
               <div className="relative overflow-hidden rounded-2xl border border-line bg-paper p-8">

@@ -47,7 +47,12 @@ export default function ProjectsPage() {
     <ViewTransition name="page">
       <PageHero
         eyebrow="Projects"
-        title="From prototype to practice."
+        title={
+          <>
+            From prototype to{" "}
+            <em className="text-gradient animate-shimmer">practice.</em>
+          </>
+        }
         description="Real projects. Real impact. Solutions developed for institutions, departments, businesses and communities."
       />
 
@@ -57,7 +62,7 @@ export default function ProjectsPage() {
           title={
             <>
               Real projects.{" "}
-              <span className="text-accent">Real impact.</span>
+              <em className="text-gradient animate-shimmer">Real impact.</em>
             </>
           }
         />

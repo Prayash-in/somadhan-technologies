@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ViewTransition } from "react";
 import Reveal from "@/components/Reveal";
@@ -10,11 +9,20 @@ import { tones } from "@/components/tone";
 import {
   SatelliteGlyph,
   LeafGlyph,
-  DropGlyph,
   ChainGlyph,
   BuildingGlyph,
+  LanguageGlyph,
+  VoiceGlyph,
+  TranslateGlyph,
+  NetworkGlyph,
+  CitizenGlyph,
+  DashboardGlyph,
+  DocumentGlyph,
+  UniversityGlyph,
+  ResearchGlyph,
+  IndustryGlyph,
+  CommunityGlyph,
 } from "@/components/glyphs";
-import { publications } from "@/content/research";
 import { posts } from "@/content/posts";
 
 const aboutPoints = [
@@ -35,11 +43,34 @@ const aboutPoints = [
   },
 ];
 
+const inclusiveAIFeatures = [
+  { label: "Multilingual Chatbots", Icon: LanguageGlyph },
+  { label: "Voice AI & Assistants", Icon: VoiceGlyph },
+  { label: "Translation & Language AI", Icon: TranslateGlyph },
+  { label: "Regional Language Applications", Icon: NetworkGlyph },
+];
+
+const governmentFeatures = [
+  { label: "Citizen Service Platforms", Icon: CitizenGlyph },
+  { label: "AI-enabled Dashboards", Icon: DashboardGlyph },
+  { label: "Document & Workflow Automation", Icon: DocumentGlyph },
+  { label: "Departmental Solutions", Icon: BuildingGlyph },
+];
+
+const partnerCategories = [
+  { title: "Government Departments", Icon: BuildingGlyph, tone: "sky" as const },
+  { title: "Universities & Institutions", Icon: UniversityGlyph, tone: "gold" as const },
+  { title: "Research Organisations", Icon: ResearchGlyph, tone: "terra" as const },
+  { title: "Industry Partners", Icon: IndustryGlyph, tone: "green" as const },
+  { title: "Agri & FPO Networks", Icon: LeafGlyph, tone: "gold" as const },
+  { title: "NGOs & Communities", Icon: CommunityGlyph, tone: "sky" as const },
+];
+
 const services = [
   {
     index: "01",
     title: "AI Solutions",
-    href: "/solutions",
+    href: "/multilingual-ai",
     description:
       "AI application development, intelligent automation, generative AI, chatbots, analytics and custom AI systems.",
     tags: ["Generative AI", "Automation", "Analytics"],
@@ -48,16 +79,26 @@ const services = [
   },
   {
     index: "02",
-    title: "Research & Innovation",
-    href: "/research",
+    title: "Multilingual AI",
+    href: "/multilingual-ai",
     description:
-      "Research that powers our solutions — from applied AI research to publications and field-validated innovations.",
-    tags: ["Applied Research", "Publications", "Innovation"],
+      "Voice, translation and language AI that removes barriers — technology that works in the language of every user.",
+    tags: ["Voice AI", "Translation", "Accessibility"],
+    tone: "sky" as const,
+    Icon: LanguageGlyph,
+  },
+  {
+    index: "03",
+    title: "Agri Informatics",
+    href: "/agri-informatics",
+    description:
+      "AI-powered informatics for agriculture — remote sensing, crop intelligence, climate advisory and value-chain analytics.",
+    tags: ["Remote Sensing", "Climate Advisory", "Crop Intelligence"],
     tone: "gold" as const,
     Icon: LeafGlyph,
   },
   {
-    index: "03",
+    index: "04",
     title: "Government Solutions",
     href: "/government",
     description:
@@ -67,7 +108,7 @@ const services = [
     Icon: BuildingGlyph,
   },
   {
-    index: "04",
+    index: "05",
     title: "Training & Internship",
     href: "/training",
     description:
@@ -77,21 +118,6 @@ const services = [
     Icon: ChainGlyph,
   },
 ];
-
-const agriTiles = [
-  { label: "Crop Intelligence", Icon: LeafGlyph },
-  { label: "Disease & Pest Detection", Icon: SatelliteGlyph },
-  { label: "Weather & Climate Advisory", Icon: DropGlyph },
-  { label: "Soil & Water Intelligence", Icon: DropGlyph },
-  { label: "GIS & Remote Sensing", Icon: SatelliteGlyph },
-  { label: "Value Chain Intelligence", Icon: ChainGlyph },
-];
-
-const statusTones: Record<string, keyof typeof tones> = {
-  "Peer-reviewed": "green",
-  "Preprint": "sky",
-  "In review": "gold",
-};
 
 const tagTones: Record<string, keyof typeof tones> = {
   Approach: "green",
@@ -174,22 +200,14 @@ export default function Home() {
           <LeafMark className="h-12 w-12 -rotate-90" />
         </div>
         <div className="relative mx-auto flex max-w-6xl flex-col items-center px-5 pb-24 pt-20 text-center sm:px-8 sm:pt-28">
-          <Reveal>
-            <Image
-              src="/logo.png"
-              alt="Somadhan Technologies"
-              width={535}
-              height={466}
-              className="mx-auto h-36 w-auto sm:h-48"
-              priority
-            />
-          </Reveal>
           <Reveal delay={0.12}>
-            <h1 className="mt-8 max-w-3xl font-display text-4xl font-medium leading-[1.12] tracking-tight text-balance sm:text-6xl lg:text-7xl">
-              Reaching the{" "}
-              <em className="text-gradient animate-shimmer">Summit</em> of
-              Inclusive AI
+            <h1 className="mt-8 max-w-3xl font-display text-4xl font-semibold leading-[1.12] tracking-tight text-balance sm:text-6xl lg:text-7xl">
+              Somadhan Technologies
             </h1>
+            <p className="mx-auto mt-5 max-w-2xl font-display text-2xl font-medium leading-snug tracking-tight text-balance text-ink sm:text-3xl lg:text-4xl">
+              Reaching the Summit of{" "}
+              <em className="text-gradient animate-shimmer">Inclusive AI</em>
+            </p>
           </Reveal>
           <Reveal delay={0.18}>
             <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-ink-soft sm:text-lg">
@@ -200,7 +218,7 @@ export default function Home() {
           <Reveal delay={0.24}>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <Link
-                href="/solutions"
+                href="/multilingual-ai"
                 className="rounded-full bg-linear-to-r from-accent to-moss px-7 py-3.5 text-sm font-medium text-white shadow-lg shadow-accent/25 transition-all hover:shadow-xl hover:shadow-accent/35 hover:from-accent-deep hover:to-accent"
               >
                 Explore Solutions
@@ -225,7 +243,9 @@ export default function Home() {
             title={
               <>
                 Intelligent technology for{" "}
-                <em className="text-gradient">real-world impact.</em>
+                <em className="text-gradient animate-shimmer">
+                  real-world impact.
+                </em>
               </>
             }
             description="Somadhan Technologies is an AI technology and innovation organization focused on building intelligent, accessible and practical solutions for real-world challenges — bringing together AI, data, agriculture, language technologies and digital systems."
@@ -260,17 +280,24 @@ export default function Home() {
           <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
             <SectionHeading
               eyebrow="What We Do"
-              title="Intelligent Solutions. Real Impact."
+              title={
+                <>
+                  Intelligent Solutions.{" "}
+                  <em className="text-gradient animate-shimmer">
+                    Real Impact.
+                  </em>
+                </>
+              }
               description="AI, language, agriculture, government and training — intelligent technology designed for real-world problems."
             />
             <Reveal delay={0.15}>
-              <ArrowLink href="/solutions" className="shrink-0">
+              <ArrowLink href="/multilingual-ai" className="shrink-0">
                 Explore Solutions
               </ArrowLink>
             </Reveal>
           </div>
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, i) => {
               const tone = tones[service.tone];
               const Icon = service.Icon;
@@ -327,94 +354,194 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="agri-focus" className="border-b border-line">
-        <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8 sm:py-32">
-          <div className="grid gap-14 lg:grid-cols-[1.05fr_1fr] lg:gap-20">
-            <div>
-              <SectionHeading
-                eyebrow="Our Current Focus"
-                title={
-                  <>
-                    AI-Powered{" "}
-                    <span className="text-accent">Agri-Informatics.</span>
-                  </>
-                }
-                description="Transforming agricultural data and intelligence into actionable insights for a sustainable and productive future."
-              />
-              <Reveal delay={0.1}>
-                <p className="mt-8 font-display text-lg italic text-accent">
-                  Sense. Understand. Predict. Advise.
-                </p>
-              </Reveal>
-              <Reveal delay={0.2}>
-                <ArrowLink
-                  href="/agri-informatics"
-                  className="mt-8 inline-block"
-                >
-                  Explore Agri-Informatics
-                </ArrowLink>
-              </Reveal>
-            </div>
+      <section
+        id="agri-focus"
+        className="relative overflow-hidden border-b border-line"
+      >
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-cover bg-right bg-no-repeat"
+          style={{ backgroundImage: "url(/agri_info.png)" }}
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-linear-to-r from-forest/80 via-forest/35 to-transparent"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-linear-to-t from-forest/55 via-transparent to-forest/30"
+        />
 
-            <Reveal delay={0.15} className="h-full">
-              <div className="relative h-full overflow-hidden rounded-3xl bg-forest p-8 sm:p-10">
+        <div className="relative mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-24 lg:py-28">
+          <div className="max-w-2xl">
+            <Reveal>
+              <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-moss">
+                <span
+                  aria-hidden="true"
+                  className="h-px w-6 bg-linear-to-r from-moss to-gold"
+                />
+                Our Special Focus
+              </p>
+              <h2 className="mt-5 font-display text-4xl font-semibold leading-[1.08] tracking-tight text-balance text-paper sm:text-5xl lg:text-[3.4rem]">
+                AI-Powered{" "}
+                <em className="text-gradient animate-shimmer">
+                  Agri-Informatics
+                </em>
+              </h2>
+              <p className="mt-4 font-display text-lg italic text-moss sm:text-xl">
+                Sense. Understand. Predict. Advise.
+              </p>
+              <p className="mt-4 max-w-md text-base leading-relaxed text-paper/85 sm:text-lg">
+                Transforming agricultural data and intelligence into actionable
+                insights for a more sustainable and productive future.
+              </p>
+            </Reveal>
+
+            <Reveal delay={0.15}>
+              <Link
+                href="/agri-informatics"
+                className="group mt-10 inline-flex items-center gap-2 rounded-full bg-linear-to-r from-accent to-moss px-7 py-3.5 text-sm font-medium text-white shadow-lg shadow-accent/30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-accent/45"
+              >
+                Explore Agri-Informatics
+                <span
+                  aria-hidden="true"
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                >
+                  &rarr;
+                </span>
+              </Link>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section id="solutions" className="border-b border-line">
+        <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8 sm:py-32">
+          <div className="mx-auto max-w-2xl text-center">
+            <SectionHeading
+              eyebrow="What We Build"
+              align="center"
+              title={
+                <>
+                  Intelligence that works for{" "}
+                  <em className="text-gradient animate-shimmer">everyone.</em>
+                </>
+              }
+              description="Inclusive AI in every language — and across every public service. Two platforms, one commitment: technology that people actually use."
+            />
+          </div>
+
+          <div className="mt-14 grid gap-6 lg:grid-cols-2">
+            <Reveal>
+              <div className="group relative flex h-full flex-col overflow-hidden rounded-[1.125rem] border border-line bg-[linear-gradient(160deg,#f7f3fd_0%,#efe8fb_100%)] p-8 shadow-sm shadow-ink/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#6b5bd0]/10 sm:p-10">
                 <div
                   aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 bg-field-grid-light opacity-40 [mask-image:radial-gradient(80%_80%_at_50%_30%,black,transparent)]"
+                  className="pointer-events-none absolute inset-0 bg-[#e3d9fa]/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 />
                 <div
                   aria-hidden="true"
-                  className="animate-drift-a pointer-events-none absolute -left-16 -top-16 h-64 w-64 rounded-full bg-[radial-gradient(circle_at_center,rgba(74,157,106,0.4),transparent_70%)]"
-                />
-                <div
-                  aria-hidden="true"
-                  className="animate-drift-b pointer-events-none absolute -bottom-16 -right-16 h-64 w-64 rounded-full bg-[radial-gradient(circle_at_center,rgba(168,120,31,0.3),transparent_70%)]"
-                />
-                <div
-                  aria-hidden="true"
-                  className="animate-float pointer-events-none absolute right-8 top-8 text-moss/50"
-                  style={{ animationDelay: "0.6s", animationDuration: "7s" }}
+                  className="pointer-events-none absolute -right-10 -top-10 rotate-6 text-[#6b5bd0] opacity-[0.07]"
                 >
-                  <LeafMark className="h-16 w-16 rotate-12" />
+                  <LanguageGlyph className="h-64 w-64" />
                 </div>
                 <div
                   aria-hidden="true"
-                  className="animate-float pointer-events-none absolute bottom-10 left-6 text-gold/40"
-                  style={{ animationDelay: "2s", animationDuration: "8.5s" }}
+                  className="pointer-events-none absolute -right-2 top-24 -rotate-12 text-[#6b5bd0] opacity-[0.05]"
                 >
-                  <LeafMark className="h-12 w-12 -rotate-45" />
+                  <TranslateGlyph className="h-24 w-24" />
                 </div>
-                <div
-                  aria-hidden="true"
-                  className="animate-float pointer-events-none absolute right-4 bottom-24 text-sky/40"
-                  style={{ animationDelay: "3.2s", animationDuration: "9s" }}
-                >
-                  <LeafMark className="h-9 w-9 rotate-90" />
-                </div>
-                <div className="relative">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-accent to-moss text-white shadow-lg shadow-accent/30">
-                    <LeafGlyph className="h-8 w-8" />
-                  </div>
-                  <p className="mt-6 font-display text-2xl font-medium text-paper">
-                    Data to field. Field to decision.
+
+                <div className="relative flex flex-1 flex-col">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#6b5bd0]">
+                    AI That Speaks Your Language
                   </p>
-                  <p className="mt-3 max-w-md text-sm leading-relaxed text-paper/70">
-                    From individual fields to entire value chains — our
-                    solutions connect agricultural data to real decisions.
+                  <h3 className="mt-4 font-display text-2xl font-semibold leading-[1.2] tracking-tight text-ink sm:text-[1.75rem]">
+                    Inclusive. Multilingual. Accessible.
+                  </h3>
+                  <p className="mt-4 max-w-md text-sm leading-relaxed text-ink-soft sm:text-[15px]">
+                    We build AI applications that break language barriers and
+                    bring technology closer to every user.
                   </p>
-                  <div className="mt-8 grid grid-cols-2 gap-3">
-                    {agriTiles.map(({ label, Icon }) => (
-                      <div
-                        key={label}
-                        className="flex items-center gap-2.5 rounded-xl border border-paper/15 bg-paper/10 p-3.5"
-                      >
-                        <Icon className="h-4 w-4 shrink-0 text-moss" />
-                        <span className="text-xs font-medium leading-snug text-paper">
+
+                  <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-5">
+                    {inclusiveAIFeatures.map(({ label, Icon }) => (
+                      <div key={label} className="flex items-center gap-3">
+                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/70 text-[#6b5bd0] shadow-sm shadow-ink/5 ring-1 ring-line/70 transition-transform duration-300 group-hover:scale-105">
+                          <Icon className="h-5 w-5" />
+                        </span>
+                        <span className="text-sm font-medium leading-snug text-ink">
                           {label}
                         </span>
                       </div>
                     ))}
                   </div>
+
+                  <Link
+                    href="/multilingual-ai"
+                    className="mt-9 inline-flex w-fit items-center gap-2 rounded-full bg-[#6b5bd0] px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-[#6b5bd0]/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#5b4cc0] hover:shadow-md hover:shadow-[#6b5bd0]/30"
+                  >
+                    Learn More
+                    <span
+                      aria-hidden="true"
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    >
+                      &rarr;
+                    </span>
+                  </Link>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.1}>
+              <div className="group relative flex h-full flex-col overflow-hidden rounded-[1.125rem] border border-line bg-[linear-gradient(160deg,#f0f7fd_0%,#e6f1fb_100%)] p-8 shadow-sm shadow-ink/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-sky/10 sm:p-10">
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 bg-[#d7e9f8]/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                />
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -right-8 -top-8 text-[#1f6f9e] opacity-[0.08]"
+                >
+                  <BuildingGlyph className="h-60 w-60" />
+                </div>
+
+                <div className="relative flex flex-1 flex-col">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-sky">
+                    Inclusive AI for Government
+                  </p>
+                  <h3 className="mt-4 font-display text-2xl font-semibold leading-[1.2] tracking-tight text-ink sm:text-[1.75rem]">
+                    Smarter Public Services for a Better Tomorrow
+                  </h3>
+                  <p className="mt-4 max-w-md text-sm leading-relaxed text-ink-soft sm:text-[15px]">
+                    AI-enabled, data-driven and citizen-centric solutions for
+                    accessible and efficient public services.
+                  </p>
+
+                  <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-5">
+                    {governmentFeatures.map(({ label, Icon }) => (
+                      <div key={label} className="flex items-center gap-3">
+                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/70 text-sky shadow-sm shadow-ink/5 ring-1 ring-line/70 transition-transform duration-300 group-hover:scale-105">
+                          <Icon className="h-5 w-5" />
+                        </span>
+                        <span className="text-sm font-medium leading-snug text-ink">
+                          {label}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <Link
+                    href="/government"
+                    className="mt-9 inline-flex w-fit items-center gap-2 rounded-full bg-sky px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-sky/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-sky-deep hover:shadow-md hover:shadow-sky/30"
+                  >
+                    Explore Government Solutions
+                    <span
+                      aria-hidden="true"
+                      className="transition-transform duration-300 group-hover:translate-x-1"
+                    >
+                      &rarr;
+                    </span>
+                  </Link>
                 </div>
               </div>
             </Reveal>
@@ -422,46 +549,57 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="research" className="mx-auto max-w-6xl px-5 py-24 sm:px-8 sm:py-32">
-        <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
-          <SectionHeading
-            eyebrow="Research & Innovation"
-            title="Driving Innovation. Delivering Impact."
-            description="Research that powers our solutions — from applied AI research to publications and field-validated innovations."
-          />
-          <Reveal delay={0.15}>
-            <ArrowLink href="/research" className="shrink-0">
-              Explore Research
-            </ArrowLink>
-          </Reveal>
+      <section id="partners" className="overflow-hidden bg-white">
+        <div className="mx-auto max-w-6xl px-5 pt-24 sm:px-8 sm:pt-32">
+          <div className="mx-auto max-w-2xl text-center">
+            <SectionHeading
+              eyebrow="Our Partners"
+              align="center"
+              title={
+                <>
+                  Trusted by{" "}
+                  <em className="text-gradient animate-shimmer">
+                    partners who matter.
+                  </em>
+                </>
+              }
+              description="From government departments to grassroots communities — inclusive technology is built together, with everyone."
+            />
+          </div>
         </div>
 
-        <div className="mt-14 divide-y divide-line rounded-2xl border border-line bg-white shadow-sm shadow-ink/5">
-          {publications.slice(0, 3).map((pub, i) => {
-            const tone = tones[statusTones[pub.status] ?? "green"];
-            return (
-              <Reveal key={pub.title} delay={i * 0.05}>
-                <Link
-                  href="/research"
-                  className="group grid gap-4 px-8 py-7 transition-colors hover:bg-cream/50 sm:grid-cols-[1fr_auto] sm:items-center sm:gap-8"
-                >
-                  <div>
-                    <h3 className="font-display text-lg font-medium leading-snug transition-colors group-hover:text-accent sm:text-xl">
-                      {pub.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-ink-soft">
-                      {pub.venue} &middot; {pub.year}
-                    </p>
-                  </div>
-                  <span
-                    className={`h-fit w-fit rounded-full border px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] ${tone.chip}`}
+        <div className="relative mt-14 pb-24 sm:pb-32">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-linear-to-r from-white to-transparent sm:w-32"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-linear-to-l from-white to-transparent sm:w-32"
+          />
+          <div className="flex w-max animate-marquee [animation-direction:reverse]">
+            {[false, true].map((hidden, h) => (
+              <ul
+                key={h}
+                aria-hidden={hidden || undefined}
+                className="flex shrink-0 items-center gap-4 pr-4"
+              >
+                {partnerCategories.map(({ title, Icon, tone }) => (
+                  <li
+                    key={title}
+                    className="flex shrink-0 items-center gap-3 rounded-2xl border border-line bg-paper px-7 py-4 shadow-sm shadow-ink/5"
                   >
-                    {pub.status}
-                  </span>
-                </Link>
-              </Reveal>
-            );
-          })}
+                    <span className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl ${tones[tone].tile} shadow-md shadow-accent/25`}>
+                      <Icon className="h-5 w-5" />
+                    </span>
+                    <span className="whitespace-nowrap font-display text-base font-medium">
+                      {title}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -469,9 +607,16 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-5 py-24 sm:px-8 sm:py-32">
           <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
             <SectionHeading
-              eyebrow="News & Updates"
-              title="Notes from the research bench."
-              description="Essays and field notes on the ideas behind our work — and the realities that shape them."
+              eyebrow="Insights"
+              title={
+                <>
+                  Ideas, notes &amp;{" "}
+                  <em className="text-gradient animate-shimmer">
+                    field insights.
+                  </em>
+                </>
+              }
+              description="Essays, field notes and fresh perspectives on the ideas behind our work — and the realities that shape them."
             />
             <Reveal delay={0.15}>
               <ArrowLink href="/blog" className="shrink-0">
@@ -561,7 +706,9 @@ export default function Home() {
                 Partner with us
               </p>
               <h2 className="mt-5 font-display text-3xl font-medium tracking-tight text-paper text-balance sm:text-5xl">
-                Let&apos;s Build Inclusive AI Together
+                Let&apos;s Build{" "}
+                <em className="text-gradient animate-shimmer">Inclusive AI</em>{" "}
+                Together
               </h2>
               <p className="mx-auto mt-6 max-w-md text-sm leading-relaxed text-paper/70 sm:text-base">
                 Join us in creating intelligent solutions that empower people,
