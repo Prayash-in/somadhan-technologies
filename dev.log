@@ -1,0 +1,13 @@
+
+> somadhan-technologies@0.1.0 dev
+> next dev
+
+▲ Next.js 16.3.0 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.189:3000
+- Environments: .env.local
+✓ Ready in 1225ms
+✓ Running next.config.ts took 87ms
+
+ GET /contact 200 in 760ms (next.js: 320ms, application-code: 439ms)
+ GET /contact 200 in 82ms (next.js: 9ms, application-code: 73ms)
