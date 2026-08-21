@@ -15,3 +15,8 @@
  GET / 200 in 232ms (next.js: 60ms, application-code: 172ms)
  GET / 200 in 402ms (next.js: 20ms, application-code: 382ms)
  GET /contact 200 in 82ms (next.js: 29ms, application-code: 53ms)
+ GET /contact 200 in 56ms (next.js: 29ms, application-code: 26ms)
+ GET /contact 200 in 60ms (next.js: 14ms, application-code: 46ms)
+ GET /contact 200 in 141ms (next.js: 15ms, application-code: 126ms)
+ GET / 200 in 207ms (next.js: 25ms, application-code: 182ms)
+ GET / 200 in 295ms (next.js: 15ms, application-code: 279ms)

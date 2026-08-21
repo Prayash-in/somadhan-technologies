@@ -1,46 +1,53 @@
 export type Member = {
   name: string;
   role: string;
-  focus: string;
+  focus?: string;
   initials: string;
+  email?: string;
 };
 
 export const members: Member[] = [
   {
-    name: "Aarav Somadhan",
-    role: "Founder & Chief Executive",
-    focus: "Vision, strategy and partnerships",
-    initials: "AS",
+    name: "Himani Patowary",
+    role: "Founder & Director",
+    initials: "HP",
+    email: "director@somadhantechnologies.in",
   },
   {
-    name: "Dr. Meera Krishnan",
-    role: "Head of Research",
-    focus: "ML research, field protocols",
-    initials: "MK",
+    name: "Prayash Bhagawati",
+    role: "Chief Technology Officer (CTO) & Director – Projects",
+    initials: "PB",
+    email: "prayash.cto.somadhantechnologies@gmail.com",
   },
   {
-    name: "Rohan Iyer",
-    role: "Lead Machine Learning Engineer",
-    focus: "Computer vision systems",
-    initials: "RI",
+    name: "Hirakjyoti Sarma",
+    role: "Head – Operations & Administration",
+    initials: "HS",
+    email: "hirak.somadhantechnologies@gmail.com",
   },
   {
-    name: "Dr. Ananya Deshpande",
-    role: "Principal Agronomist",
-    focus: "Crop science, trial design",
-    initials: "AD",
+    name: "Piyush Deka",
+    role: "Head – Projects & Business Development",
+    initials: "PD",
+    email: "piyush.somadhantechnologies@gmail.com",
   },
   {
-    name: "Kabir Nair",
-    role: "Head of Engineering",
-    focus: "Platforms, pipelines, infra",
-    initials: "KN",
+    name: "Kallul Gogoi",
+    role: "Head – Training & Skill Development",
+    initials: "KG",
+    email: "kallul.somadhantechnologies@gmail.com",
   },
   {
-    name: "Sara Fernandes",
-    role: "Research Fellow — Climate",
-    focus: "Weather modelling, resilience",
-    initials: "SF",
+    name: "Dhritiman Bayan",
+    role: "Head – Research & Innovation",
+    initials: "DB",
+    email: "dhritiman.somadhantechnologies@gmail.com",
+  },
+  {
+    name: "Manjit Ch. Patowary",
+    role: "Head – Finance & Accounts",
+    initials: "MP",
+    email: "mancivil2@gmail.com",
   },
 ];
 

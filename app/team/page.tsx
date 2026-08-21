@@ -1,5 +1,6 @@
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
+import { MailGlyph } from "@/components/glyphs";
 import { ViewTransition } from "react";
 import { tones } from "@/components/tone";
 import { members, values } from "@/content/team";
@@ -7,10 +8,10 @@ import { members, values } from "@/content/team";
 export const metadata = {
   title: "Team & Careers",
   description:
-    "The researchers, engineers and agronomists behind Somadhan Technologies — and open roles on the team.",
+    "The people behind Somadhan Technologies — engineers, researchers and operators building inclusive technology for the real world.",
 };
 
-const avatarTones = ["green", "gold", "sky", "terra", "sky", "gold"] as const;
+const avatarTones = ["green", "gold", "sky", "terra", "sky", "gold", "green"] as const;
 
 const valueTones = ["green", "gold", "sky", "terra"] as const;
 
@@ -21,13 +22,13 @@ export default function TeamPage() {
         eyebrow="Team"
         title={
           <>
-            Researchers who build.{" "}
+            Problem solvers at heart.{" "}
             <em className="text-gradient animate-shimmer">
-              Builders who research.
+              Builders by craft.
             </em>
           </>
         }
-        description="A small team at the intersection of machine learning, agronomy and engineering — and we are growing deliberately."
+        description="A multidisciplinary team of engineers, researchers, trainers and administrators — united by one goal: intelligent technology that works for everyone."
       />
 
       <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
@@ -55,9 +56,22 @@ export default function TeamPage() {
                   <p className={`mt-1 text-sm font-medium ${tone.text}`}>
                     {member.role}
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-                    {member.focus}
-                  </p>
+                  {member.focus ? (
+                    <p className="mt-3 text-sm leading-relaxed text-ink-soft">
+                      {member.focus}
+                    </p>
+                  ) : null}
+                  {member.email ? (
+                    <div className="mt-auto">
+                      <a
+                        href={`mailto:${member.email}`}
+                        aria-label={`Email ${member.name}`}
+                        className="mt-5 flex h-9 w-9 items-center justify-center rounded-lg bg-accent-soft text-accent transition-all hover:bg-accent hover:text-white"
+                      >
+                        <MailGlyph className="h-4 w-4" />
+                      </a>
+                    </div>
+                  ) : null}
                 </div>
               </Reveal>
             );

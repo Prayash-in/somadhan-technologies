@@ -196,6 +196,15 @@ export function BuildingGlyph({ className = "h-6 w-6" }: { className?: string })
   );
 }
 
+export function MailGlyph({ className = "h-6 w-6" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" {...stroke}>
+      <rect x="3" y="5" width="18" height="14" rx="2" />
+      <path d="m4.5 7.5 7.5 5.5 7.5-5.5" />
+    </svg>
+  );
+}
+
 export function SolutionGlyph({
   id,
   className = "h-6 w-6",

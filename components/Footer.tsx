@@ -5,6 +5,7 @@ const columns = [
     title: "Company",
     links: [
       { href: "/about", label: "About Us" },
+      { href: "/team", label: "Team" },
       { href: "/multilingual-ai", label: "Multilingual AI" },
       { href: "/agri-informatics", label: "Agri-Informatics" },
       { href: "/government", label: "Government Solutions" },
