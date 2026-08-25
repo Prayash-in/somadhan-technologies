@@ -15,6 +15,7 @@ const tagTones: Record<string, keyof typeof tones> = {
   Approach: "green",
   Research: "sky",
   "Field Notes": "gold",
+  Perspectives: "terra",
 };
 
 export default function BlogPage() {

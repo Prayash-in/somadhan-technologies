@@ -33,6 +33,7 @@ export default async function BlogPostPage({
     Approach: "green",
     Research: "sky",
     "Field Notes": "gold",
+    Perspectives: "terra",
   };
   const tagTone = tones[tagTones[post.tag] ?? "green"];
 
