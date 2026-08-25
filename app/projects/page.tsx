@@ -1,4 +1,3 @@
-import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import ArrowLink from "@/components/ArrowLink";
@@ -8,8 +7,17 @@ import { SatelliteGlyph, LeafGlyph, DropGlyph, ChainGlyph } from "@/components/g
 export const metadata = {
   title: "Projects",
   description:
-    "Real projects, real impact — AI, agriculture, government, multilingual technology and research projects developed by Somadhan Technologies for institutions, departments, businesses and communities.",
+    "Real projects, real impact - featuring Krishiva AI, our ongoing flagship agricultural intelligence platform (“Ask Agriculture. Get an Action.”), alongside AI, agriculture, government, multilingual technology and research projects developed by Somadhan Technologies.",
 };
+
+const contextFactors = [
+  "Crop",
+  "Symptoms",
+  "Location",
+  "Season",
+  "Weather",
+  "Field Conditions",
+];
 
 const projects = [
   {
@@ -45,17 +53,6 @@ const projects = [
 export default function ProjectsPage() {
   return (
     <ViewTransition name="page">
-      <PageHero
-        eyebrow="Projects"
-        title={
-          <>
-            From prototype to{" "}
-            <em className="text-gradient animate-shimmer">practice.</em>
-          </>
-        }
-        description="Real projects. Real impact. Solutions developed for institutions, departments, businesses and communities."
-      />
-
       <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
         <SectionHeading
           eyebrow="Our work"
@@ -66,7 +63,83 @@ export default function ProjectsPage() {
             </>
           }
         />
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
+        <Reveal className="mt-14">
+          <div className="relative overflow-hidden rounded-2xl bg-forest px-8 py-10 sm:px-12 sm:py-12">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 bg-field-grid-light opacity-40 [mask-image:radial-gradient(70%_80%_at_20%_0%,black,transparent)]"
+            />
+            <div
+              aria-hidden="true"
+              className="animate-drift-a pointer-events-none absolute -right-24 -top-28 h-80 w-80 rounded-full bg-[radial-gradient(circle_at_center,rgba(74,157,106,0.35),transparent_70%)]"
+            />
+            <div
+              aria-hidden="true"
+              className="animate-drift-b pointer-events-none absolute -bottom-32 -left-20 h-72 w-72 rounded-full bg-[radial-gradient(circle_at_center,rgba(168,120,31,0.22),transparent_70%)]"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute -bottom-20 -right-16 rotate-12 text-moss/25"
+            >
+              <LeafGlyph className="h-64 w-64" />
+            </div>
+
+            <div className="relative max-w-3xl">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/15 px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-gold">
+                  <LeafGlyph className="h-3.5 w-3.5" />
+                  Flagship Project
+                </span>
+                <span className="inline-flex items-center gap-2 rounded-full border border-paper/20 bg-paper/5 px-3.5 py-1.5 text-[11px] font-medium uppercase tracking-[0.16em] text-paper/80">
+                  <span
+                    aria-hidden="true"
+                    className="h-1.5 w-1.5 animate-pulse rounded-full bg-moss"
+                  />
+                  Ongoing
+                </span>
+              </div>
+
+              <h3 className="mt-6 font-display text-3xl font-semibold tracking-tight text-paper sm:text-4xl">
+                Krishiva AI
+              </h3>
+              <p className="mt-3 font-display text-lg italic text-moss sm:text-xl">
+                &ldquo;Ask Agriculture. Get an Action.&rdquo;
+              </p>
+              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white sm:text-base">
+                Developed under Somadhan Technologies, Krishiva AI is an
+                agricultural intelligence platform that helps farmers turn
+                complex and scattered agricultural information into simple,
+                localized and actionable decisions. Built specifically around
+                agricultural contexts - not as a general-purpose chatbot - a
+                farmer describes a crop problem, symptoms or farming situation
+                in natural language, and the system responds with concise,
+                relevant guidance powered by curated agricultural knowledge,
+                retrieval-based AI and contextual information.
+              </p>
+
+              <p className="mt-7 text-[11px] font-semibold uppercase tracking-[0.18em] text-paper/50">
+                Understands context, wherever relevant
+              </p>
+              <div className="mt-3 flex flex-wrap gap-2">
+                {contextFactors.map((factor) => (
+                  <span
+                    key={factor}
+                    className="rounded-full border border-paper/20 bg-paper/5 px-3 py-1 text-xs font-medium text-paper/85"
+                  >
+                    {factor}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-8 border-t border-paper/15 pt-5 text-sm text-paper/60">
+                Curated agricultural knowledge &middot; Retrieval-based AI
+                &middot; Localized, actionable answers
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
           {projects.map(({ title, tag, body, Icon, tile }, i) => (
             <Reveal key={title} delay={i * 0.05} className="h-full">
               <div className="group flex h-full flex-col rounded-2xl border border-line bg-paper p-8 transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-ink/5">
