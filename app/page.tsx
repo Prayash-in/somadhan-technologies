@@ -10,14 +10,10 @@ import {
   SatelliteGlyph,
   LeafGlyph,
   ChainGlyph,
-  BuildingGlyph,
   LanguageGlyph,
   VoiceGlyph,
   TranslateGlyph,
   NetworkGlyph,
-  CitizenGlyph,
-  DashboardGlyph,
-  DocumentGlyph,
   UniversityGlyph,
   ResearchGlyph,
   IndustryGlyph,
@@ -50,15 +46,7 @@ const inclusiveAIFeatures = [
   { label: "Regional Language Applications", Icon: NetworkGlyph },
 ];
 
-const governmentFeatures = [
-  { label: "Citizen Service Platforms", Icon: CitizenGlyph },
-  { label: "AI-enabled Dashboards", Icon: DashboardGlyph },
-  { label: "Document & Workflow Automation", Icon: DocumentGlyph },
-  { label: "Departmental Solutions", Icon: BuildingGlyph },
-];
-
 const partnerCategories = [
-  { title: "Government Departments", Icon: BuildingGlyph, tone: "sky" as const },
   { title: "Universities & Institutions", Icon: UniversityGlyph, tone: "gold" as const },
   { title: "Research Organisations", Icon: ResearchGlyph, tone: "terra" as const },
   { title: "Industry Partners", Icon: IndustryGlyph, tone: "green" as const },
@@ -99,16 +87,6 @@ const services = [
   },
   {
     index: "04",
-    title: "Government Solutions",
-    href: "/government",
-    description:
-      "Digital and AI-enabled solutions for departments, institutions and public services.",
-    tags: ["Citizen Services", "Dashboards", "Automation"],
-    tone: "terra" as const,
-    Icon: BuildingGlyph,
-  },
-  {
-    index: "05",
     title: "Training & Internship",
     href: "/training",
     description:
@@ -213,7 +191,7 @@ export default function Home() {
           <Reveal delay={0.18}>
             <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-ink-soft sm:text-lg">
               Building intelligent, multilingual and accessible technology
-              solutions for people, agriculture, government and institutions.
+              solutions for people, agriculture and institutions.
             </p>
           </Reveal>
           <Reveal delay={0.24}>
@@ -289,7 +267,7 @@ export default function Home() {
                   </em>
                 </>
               }
-              description="AI, language, agriculture, government and training — intelligent technology designed for real-world problems."
+              description="AI, language, agriculture and training — intelligent technology designed for real-world problems."
             />
             <Reveal delay={0.15}>
               <ArrowLink href="/multilingual-ai" className="shrink-0">
@@ -428,12 +406,12 @@ export default function Home() {
                   <em className="text-gradient animate-shimmer">everyone.</em>
                 </>
               }
-              description="Inclusive AI in every language — and across every public service. Two platforms, one commitment: technology that people actually use."
+              description="Inclusive AI in every language. Technology that people actually use."
             />
           </div>
 
-          <div className="mt-14 grid gap-6 lg:grid-cols-2">
-            <Reveal>
+          <div className="mt-14 flex justify-center">
+            <Reveal className="w-full max-w-2xl">
               <div className="group relative flex h-full flex-col overflow-hidden rounded-[1.125rem] border border-line bg-[linear-gradient(160deg,#f7f3fd_0%,#efe8fb_100%)] p-8 shadow-sm shadow-ink/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-[#6b5bd0]/10 sm:p-10">
                 <div
                   aria-hidden="true"
@@ -492,60 +470,6 @@ export default function Home() {
                 </div>
               </div>
             </Reveal>
-
-            <Reveal delay={0.1}>
-              <div className="group relative flex h-full flex-col overflow-hidden rounded-[1.125rem] border border-line bg-[linear-gradient(160deg,#f0f7fd_0%,#e6f1fb_100%)] p-8 shadow-sm shadow-ink/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-sky/10 sm:p-10">
-                <div
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-0 bg-[#d7e9f8]/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                />
-                <div
-                  aria-hidden="true"
-                  className="pointer-events-none absolute -right-8 -top-8 text-[#1f6f9e] opacity-[0.08]"
-                >
-                  <BuildingGlyph className="h-60 w-60" />
-                </div>
-
-                <div className="relative flex flex-1 flex-col">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-sky">
-                    Inclusive AI for Government
-                  </p>
-                  <h3 className="mt-4 font-display text-2xl font-semibold leading-[1.2] tracking-tight text-ink sm:text-[1.75rem]">
-                    Smarter Public Services for a Better Tomorrow
-                  </h3>
-                  <p className="mt-4 max-w-md text-sm leading-relaxed text-ink-soft sm:text-[15px]">
-                    AI-enabled, data-driven and citizen-centric solutions for
-                    accessible and efficient public services.
-                  </p>
-
-                  <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-5">
-                    {governmentFeatures.map(({ label, Icon }) => (
-                      <div key={label} className="flex items-center gap-3">
-                        <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/70 text-sky shadow-sm shadow-ink/5 ring-1 ring-line/70 transition-transform duration-300 group-hover:scale-105">
-                          <Icon className="h-5 w-5" />
-                        </span>
-                        <span className="text-sm font-medium leading-snug text-ink">
-                          {label}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <Link
-                    href="/government"
-                    className="mt-9 inline-flex w-fit items-center gap-2 rounded-full bg-sky px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-sky/25 transition-all duration-300 hover:-translate-y-0.5 hover:bg-sky-deep hover:shadow-md hover:shadow-sky/30"
-                  >
-                    Explore Government Solutions
-                    <span
-                      aria-hidden="true"
-                      className="transition-transform duration-300 group-hover:translate-x-1"
-                    >
-                      &rarr;
-                    </span>
-                  </Link>
-                </div>
-              </div>
-            </Reveal>
           </div>
         </div>
       </section>
@@ -564,7 +488,7 @@ export default function Home() {
                   </em>
                 </>
               }
-              description="From government departments to grassroots communities — inclusive technology is built together, with everyone."
+              description="From universities to grassroots communities — inclusive technology is built together, with everyone."
             />
           </div>
         </div>

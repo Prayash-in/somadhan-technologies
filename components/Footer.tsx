@@ -8,7 +8,6 @@ const columns = [
       { href: "/team", label: "Team" },
       { href: "/multilingual-ai", label: "Multilingual AI" },
       { href: "/agri-informatics", label: "Agri-Informatics" },
-      { href: "/government", label: "Government Solutions" },
       { href: "/training", label: "Training & Internship" },
     ],
   },
@@ -33,7 +32,7 @@ export default function Footer() {
             <Logo className="h-32" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-ink-soft">
               Building intelligent, multilingual and accessible technology
-              solutions for people, agriculture, government and institutions.
+              solutions for people, agriculture and institutions.
             </p>
             <p className="mt-6 text-xs uppercase tracking-[0.18em] text-ink-soft/70">
               Reaching the Summit of Inclusive AI

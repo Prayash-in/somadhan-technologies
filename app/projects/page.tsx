@@ -2,12 +2,12 @@ import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import ArrowLink from "@/components/ArrowLink";
 import { ViewTransition } from "react";
-import { SatelliteGlyph, LeafGlyph, DropGlyph, ChainGlyph } from "@/components/glyphs";
+import { SatelliteGlyph, LeafGlyph, DropGlyph } from "@/components/glyphs";
 
 export const metadata = {
   title: "Projects",
   description:
-    "Real projects, real impact - featuring Krishiva AI, our ongoing flagship agricultural intelligence platform (“Ask Agriculture. Get an Action.”), alongside AI, agriculture, government, multilingual technology and research projects developed by Somadhan Technologies.",
+    "Real projects, real impact - featuring Krishiva AI, our ongoing flagship agricultural intelligence platform (“Ask Agriculture. Get an Action.”), alongside AI, agriculture, multilingual technology and research projects developed by Somadhan Technologies.",
 };
 
 const contextFactors = [
@@ -41,13 +41,7 @@ const projects = [
     Icon: SatelliteGlyph,
     tile: "bg-gold-soft text-gold-deep",
   },
-  {
-    title: "Government Service Automation",
-    tag: "Government",
-    body: "Problem — manual document workflows delay citizen services. Technology — document AI and workflow automation. Impact — faster, more accessible public services.",
-    Icon: ChainGlyph,
-    tile: "bg-terra-soft text-terra-deep",
-  },
+
 ];
 
 export default function ProjectsPage() {

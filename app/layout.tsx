@@ -24,12 +24,11 @@ export const metadata: Metadata = {
     template: "%s — Somadhan Technologies",
   },
   description:
-    "Somadhan Technologies builds intelligent, multilingual and accessible technology solutions for people, agriculture, government and institutions.",
+    "Somadhan Technologies builds intelligent, multilingual and accessible technology solutions for people, agriculture and institutions.",
   keywords: [
     "Inclusive AI",
     "Multilingual AI",
     "Agri-Informatics",
-    "Government Solutions",
     "AI Research",
     "Artificial Intelligence",
     "Somadhan Technologies",
@@ -40,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Somadhan Technologies — Reaching the Summit of Inclusive AI",
     description:
-      "Building intelligent, multilingual and accessible technology solutions for people, agriculture, government and institutions.",
+      "Building intelligent, multilingual and accessible technology solutions for people, agriculture and institutions.",
     images: ["/logo.png"],
   },
 };

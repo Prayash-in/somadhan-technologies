@@ -7,7 +7,6 @@ import Logo from "./Logo";
 import {
   LeafGlyph,
   LanguageGlyph,
-  BuildingGlyph,
   CommunityGlyph,
   CitizenGlyph,
 } from "./glyphs";
@@ -46,12 +45,6 @@ const aiItems: NavChild[] = [
     label: "Multilingual AI",
     Icon: LanguageGlyph,
     tile: "bg-sky-soft text-sky-deep",
-  },
-  {
-    href: "/government",
-    label: "Government Solutions",
-    Icon: BuildingGlyph,
-    tile: "bg-terra-soft text-terra-deep",
   },
 ];
 

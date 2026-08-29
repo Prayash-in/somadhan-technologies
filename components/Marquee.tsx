@@ -2,7 +2,6 @@ const items = [
   "AI Solutions",
   "Multilingual AI",
   "Agri-Informatics",
-  "Government Solutions",
   "Research & Innovation",
   "Training & Internship",
   "Inclusive AI",
