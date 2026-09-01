@@ -4,197 +4,187 @@ import EnrollButton from "@/components/EnrollButton";
 import { getCourseById } from "@/lib/courses";
 
 export const metadata = {
-  title: "7-Days Agentic AI Bootcamp",
+  title: "7-Day AI Tools Bootcamp",
   description:
-    "Master agentic design patterns — reflection, tool use, planning & multi-agent workflows. Build autonomous AI agents that reason, act and collaborate in just 7 days.",
+    "Build your personal AI toolkit — AI assistants, prompting, research, writing, design, coding, data & automation in 7 hands-on days.",
 };
 
 // Data
 const whatYouLearn = [
-  "Understand the evolution from AI → Generative AI → LLMs → AI Agents.",
-  "Learn what makes a system agentic and how agents differ from conventional AI applications.",
-  "Understand the basic Observe → Think → Plan → Act → Evaluate agent loop.",
-  "Learn the fundamentals of prompting, context and structured AI outputs.",
-  "Explore how AI connects with tools, APIs, data and external services.",
-  "Get hands-on exposure to RAG, memory and agent workflows.",
-  "Learn how to approach AI problems with an engineering mindset.",
-  "Convert real-world problems into AI-powered solutions.",
-  "Build and demonstrate a working Agentic AI project.",
+  "AI assistants and conversational AI",
+  "Prompt engineering",
+  "AI-powered research and study tools",
+  "Document and PDF analysis",
+  "AI writing and presentation tools",
+  "AI image, video, voice and audio tools",
+  "AI coding assistants",
+  "AI data analysis tools",
+  "Productivity and automation tools",
+  "AI workflows and tool chaining",
+  "Tool selection and evaluation",
+  "Responsible and privacy-aware AI usage",
 ];
 
-const fourPatterns = [
+const whyEnrollPoints = [
   {
-    title: "Reflection",
-    body: "AI critiques its own work and iterates to improve quality — like code review, but automated.",
+    label: "Discover",
+    body: "Understand what different categories of AI tools can do.",
   },
   {
-    title: "Tool Use",
-    body: "Connect AI to databases, APIs, and external services so it can actually perform actions, not just generate text.",
+    label: "Choose",
+    body: "Select the right tool for the right task.",
   },
   {
-    title: "Planning",
-    body: "Break complex tasks into executable steps that AI can follow and adapt when things don't go as expected.",
+    label: "Prompt",
+    body: "Give AI better instructions, context and constraints.",
   },
   {
-    title: "Multi-Agent",
-    body: "Coordinate multiple specialized AI systems to handle different parts of a complex workflow.",
+    label: "Create",
+    body: "Generate content, visuals, presentations, code and more.",
+  },
+  {
+    label: "Analyze",
+    body: "Use AI to understand documents, data and information.",
+  },
+  {
+    label: "Combine",
+    body: "Connect multiple AI tools into practical workflows.",
+  },
+  {
+    label: "Apply",
+    body: "Use AI to solve real-world problems.",
   },
 ];
 
 const whoIsFor = [
-  "Students beginning their AI journey who want to understand what lies beyond traditional AI and chatbots.",
-  "Curious learners and aspiring AI builders who want to explore how modern AI systems can reason, use tools and accomplish tasks.",
-  "Beginner programmers looking to connect their programming knowledge with real-world AI applications.",
-  "Students interested in building with AI rather than simply using AI tools.",
-  "Future developers, innovators and entrepreneurs who want early exposure to the technologies shaping the next generation of software.",
+  "Students beginning their journey with Artificial Intelligence.",
+  "Learners who want to use AI beyond basic chatbots.",
+  "Students who want to improve productivity using modern AI tools.",
+  "Aspiring developers, designers, creators and entrepreneurs.",
+  "Students interested in AI for academics, projects and careers.",
+  "Anyone curious about how AI is changing the way people work and create.",
 ];
 
 const courseOutline = [
   {
-    title: "DAY 1 — AI BEYOND CHATGPT",
-    subtitle: "Understanding the AI landscape",
+    title: "DAY 1 — THE AI TOOL ECOSYSTEM",
+    subtitle: "Understand the landscape and build your personal AI toolkit",
     explore: [
-      "AI in everyday life",
-      "Traditional AI vs Generative AI",
-      "LLMs and AI assistants",
-      "Chatbots vs Agents",
-      "What makes AI agentic?",
-      "Real-world applications",
+      "What is an AI tool?",
+      "Categories of AI tools",
+      "Conversational AI",
+      "Choosing the right tool",
+      "Building a toolkit",
+      "Privacy & responsible use",
     ],
-    assignmentLabel: "Assignment",
-    assignment: "AI Problem Hunter — Identify a meaningful problem around you and propose how an AI-powered system could help solve it.",
   },
   {
-    title: "DAY 2 — INSIDE GENERATIVE AI",
-    subtitle: "LLMs, Prompts & Context",
+    title: "DAY 2 — AI FOR STUDY & RESEARCH",
+    subtitle: "Turn AI into a learning and research assistant",
     explore: [
-      "What is an LLM?",
-      "Tokens and context",
-      "Training vs inference",
-      "How AI generates responses",
-      "Prompt engineering",
-      "Structured outputs",
-      "Hallucinations and limitations",
+      "AI for study",
+      "Research assistants",
+      "Summarization",
+      "PDF & document analysis",
+      "Citations & notes",
+      "Study workflows",
     ],
-    assignmentLabel: "Assignment",
-    assignment:
-      "Prompt Engineering Challenge — Design and test prompts for a useful AI assistant and compare different approaches.",
   },
   {
-    title: "DAY 3 — THINKING IN AGENTS",
-    subtitle: "From answering questions to accomplishing tasks",
+    title: "DAY 3 — AI FOR WRITING, DESIGN & CREATIVITY",
+    subtitle: "Turn ideas into content and creative assets",
     explore: [
-      "Agent vs chatbot vs workflow",
-      "Goals and task decomposition",
-      "Planning and reasoning",
-      "Tool use",
-      "Memory",
-      "Feedback and evaluation",
-      "Human-in-the-loop",
+      "AI writing tools",
+      "Presentations",
+      "Image generation",
+      "Video & voice tools",
+      "Audio & avatars",
+      "Creative workflows",
     ],
-    assignmentLabel: "Assignment",
-    assignment:
-      "Design an Agent — Define the agent's goal, steps, tools, inputs and outputs for a real-world problem.",
   },
   {
-    title: "DAY 4 — BUILD YOUR FIRST AGENT",
-    subtitle: "From concept to working system",
+    title: "DAY 4 — AI FOR CODING & TECHNICAL WORK",
+    subtitle: "Build and debug faster with AI assistance",
     explore: [
-      "Basic agent architecture",
-      "LLM + instructions + tools",
-      "Tool calling",
-      "APIs and functions",
-      "External capabilities",
-      "Basic Python integration",
-      "Testing and debugging",
+      "Coding assistants",
+      "Code generation",
+      "Debugging with AI",
+      "Documentation",
+      "Technical writing",
+      "Developer workflows",
     ],
-    assignmentLabel: "Assignment",
-    assignment:
-      "Build Your First Agent — Create a simple agent that completes a multi-step task using at least one external capability.",
   },
   {
-    title: "DAY 5 — ENGINEERING AGENTIC SYSTEMS",
-    subtitle: "Building systems, not just prompts",
+    title: "DAY 5 — AI FOR DATA, PRODUCTIVITY & AUTOMATION",
+    subtitle: "Use AI to analyse information and automate repetitive work",
     explore: [
-      "Agent architecture",
-      "Workflows",
-      "Context management",
-      "Memory",
-      "RAG fundamentals",
-      "Knowledge bases",
-      "APIs and JSON",
-      "Error handling",
-      "Reliability",
-      "Cost and latency",
-      "Responsible AI",
+      "Data analysis tools",
+      "Spreadsheets & insights",
+      "Productivity suites",
+      "Automation",
+      "Tool chaining",
+      "Evaluation criteria",
     ],
-    assignmentLabel: "Assignment",
-    assignment:
-      "Build a Knowledge-Aware Assistant — Create a small AI system that uses a knowledge source to answer questions more reliably.",
   },
   {
-    title: "DAY 6 — BUILD DAY",
-    subtitle: "From problem to prototype",
+    title: "DAY 6 — BUILD YOUR AI WORKFLOW",
+    subtitle: "Combine tools to solve a genuine problem",
     explore: [
-      "Identify a genuine problem",
-      "Define users and outcomes",
-      "Design the agent workflow",
-      "Connect tools / knowledge",
-      "Build and test",
-      "Iterate using feedback",
+      "Identify a problem",
+      "Select tools",
+      "Chain tools",
+      "Build workflow",
+      "Test & iterate",
+      "Team collaboration",
     ],
-    assignmentLabel: "Major Project",
-    assignment: "Build an Agentic AI solution for a real-world problem in teams.",
   },
   {
-    title: "DAY 7 — DEMO DAY",
-    subtitle: "Build. Test. Present.",
-    explore: ["Problem", "User", "Agent", "Architecture", "Demo", "Impact", "Future scope"],
-    assignmentLabel: "Final Deliverable",
-    assignment: "Present a working prototype and explain how it solves a meaningful problem.",
+    title: "DAY 7 — AI CHALLENGE & SHOWCASE",
+    subtitle: "Build, solve and present a practical AI-powered solution",
+    explore: ["Problem", "Toolkit", "Workflow", "Demo", "Impact", "Portfolio", "Next steps"],
   },
 ];
 
 const faqs = [
   {
     q: "Who is this bootcamp for?",
-    a: "This bootcamp is designed for students and early-stage learners beginning their AI journey who want to understand and experiment with Generative AI and Agentic AI.",
+    a: "Anyone beginning their AI journey who wants practical exposure to modern AI tools for learning, creativity, coding, productivity and real-world problem solving.",
   },
   {
-    q: "Do I need prior AI/ML knowledge?",
-    a: "No. The bootcamp begins with the fundamentals and gradually moves toward building a simple agentic system.",
+    q: "Do I need prior AI knowledge?",
+    a: "No. The course starts from the basics and gradually introduces more advanced workflows.",
   },
   {
-    q: "Do I need programming experience?",
-    a: "Basic programming knowledge can be helpful, but advanced programming or AI/ML expertise is not required.",
+    q: "Do I need programming knowledge?",
+    a: "No. Programming is useful for some activities, but several modules are accessible without programming.",
   },
   {
-    q: "Is this just a prompting course?",
-    a: "No. Prompting is only one component. You'll also explore agents, workflows, tools, APIs, knowledge, RAG and basic AI engineering.",
+    q: "Will we learn only one AI tool?",
+    a: "No. The bootcamp explores multiple categories of AI tools and focuses on how to choose and combine them.",
   },
   {
-    q: "Will I actually build an AI agent?",
-    a: "Yes. You'll progressively move from understanding the concept to designing and building a working agent.",
+    q: "Will I get to use the tools myself?",
+    a: "Yes. The course is designed around hands-on exploration rather than demonstrations alone.",
   },
   {
     q: "Are there assignments?",
-    a: "Yes. Each learning day includes a practical assignment wherever it adds value. These activities progressively prepare you for the major project.",
+    a: "Yes. Each day includes a practical assignment or challenge designed around a useful task or real-world situation.",
   },
   {
-    q: "What is the major project?",
-    a: "Teams identify a real-world problem and develop a functional Agentic AI prototype addressing it. The emphasis is on usefulness, testing and clear engineering decisions.",
+    q: "Will I build a project?",
+    a: "Yes. The final part involves building an AI-powered solution to a genuine problem.",
   },
   {
-    q: "Will I learn LangChain, CrewAI or other frameworks?",
-    a: "Frameworks may be introduced where useful, but the focus is on understanding how agentic systems work rather than simply learning a particular framework.",
+    q: "Will the exact tools taught change over time?",
+    a: "AI tools evolve rapidly. The bootcamp focuses on transferable skills: discovering, evaluating, choosing and combining tools.",
   },
   {
-    q: "What can I expect after seven days?",
-    a: "You won't become an AI expert in seven days. You'll leave with a foundation, practical experience, a project and a clearer direction for what to learn next.",
+    q: "Is this an AI/ML programming course?",
+    a: "Not primarily. It is an AI tools and practical application bootcamp, with technical exposure where it adds value.",
   },
   {
-    q: "What if I am completely new to AI?",
-    a: "That's okay. You don't need to know everything before you start. You just need to be curious enough to explore and willing to build.",
+    q: "What will I have after seven days?",
+    a: "You'll have practical experience across multiple AI tool categories, completed assignments, portfolio-ready outputs and a major project.",
   },
 ];
 
@@ -211,18 +201,17 @@ function BlueDot() {
   return <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-sky" aria-hidden="true" />;
 }
 
-export default function AgenticBootcampPage() {
+export default function AIToolsBootcampPage() {
   return (
     <div className="bg-paper">
-      {/* ---------- Hero (DeepLearning.AI style, Somadhan branded) ---------- */}
+      {/* Hero */}
       <section className="relative overflow-hidden bg-[#150a33]">
-        {/* decorative gradients */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(60% 80% at 75% 20%, rgba(124, 58, 237, 0.35), transparent 60%), radial-gradient(45% 60% at 20% 80%, rgba(45, 122, 79, 0.22), transparent 60%)",
+              "radial-gradient(60% 80% at 75% 20%, rgba(14, 165, 233, 0.28), transparent 60%), radial-gradient(45% 60% at 20% 85%, rgba(124, 58, 237, 0.18), transparent 60%)",
           }}
         />
         <div
@@ -236,9 +225,7 @@ export default function AgenticBootcampPage() {
         />
 
         <div className="relative mx-auto grid max-w-6xl gap-8 px-5 py-10 sm:px-8 sm:py-14 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:py-10">
-          {/* left */}
           <div className="min-w-0">
-            {/* breadcrumb */}
             <nav aria-label="Breadcrumb" className="text-xs text-white/60">
               <ol className="flex flex-wrap items-center gap-1.5">
                 <li>
@@ -257,33 +244,30 @@ export default function AgenticBootcampPage() {
                 <li aria-hidden="true" className="text-white/30">
                   /
                 </li>
-                <li className="text-white/90">Agentic AI</li>
+                <li className="text-white/90">AI Tools</li>
               </ol>
             </nav>
 
             <div className="mt-4 flex flex-wrap items-center gap-2">
-              <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-white backdrop-blur">
-                Bootcamp
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.12em] text-white backdrop-blur">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#06b6d4]" />
+                7-DAY BOOTCAMP
               </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-[11px] font-medium text-ink">
-                <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-accent text-white">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-[11px] font-medium text-[#1a1033]">
+                <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-[#0aa06a] text-white">
                   <svg viewBox="0 0 12 12" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth="1.8">
                     <path d="M2.5 6.5l2 2 4.5-4.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </span>
                 Beginner
               </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-[11px] font-medium text-white backdrop-blur">
-                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="12" cy="12" r="8" />
-                  <path d="M12 8v4l2.5 1.5" />
-                </svg>
-                7 Days · 14+ Hours
+              <span className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-medium text-white backdrop-blur">
+                Certificate Included
               </span>
             </div>
 
             <h1 className="mt-5 font-display text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl">
-              7-Days Agentic AI
+              7-Day AI Tools
               <span className="block font-display text-4xl font-light italic text-white/85 sm:text-5xl">
                 Bootcamp
               </span>
@@ -312,7 +296,11 @@ export default function AgenticBootcampPage() {
             </div>
 
             <div className="mt-5 flex flex-wrap items-center gap-3">
-              <EnrollButton variant="hero" label="Enroll Now — ₹299" />
+              <EnrollButton
+                variant="hero"
+                label="Enroll Now — ₹299"
+                className="inline-flex items-center justify-center rounded-full bg-[#06b6d4] px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-black/20 transition hover:bg-[#0891b2]"
+              />
               <a
                 href="#course-outline"
                 className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-white hover:bg-white/10"
@@ -326,48 +314,46 @@ export default function AgenticBootcampPage() {
             </p>
           </div>
 
-          {/* right: video / cover */}
+          {/* right: video — restored with Image 1 theme */}
           <div className="relative">
             <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0c0820] shadow-2xl shadow-black/40">
-              {/* placeholder cover with agentic network visual */}
               <div
                 className="relative aspect-[16/10] w-full bg-cover bg-center"
                 style={{
                   backgroundImage:
-                    "radial-gradient(60% 80% at 50% 50%, rgba(124,58,237,0.55), transparent 70%), linear-gradient(180deg, #1e0f4a 0%, #0c0820 100%)",
+                    "radial-gradient(60% 80% at 50% 50%, rgba(14,165,233,0.45), transparent 70%), linear-gradient(180deg, #1e0f4a 0%, #0c0820 100%)",
                 }}
               >
-                {/* network dots */}
                 <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center">
                   <div className="relative h-48 w-64">
                     <svg viewBox="0 0 200 140" className="h-full w-full" fill="none">
-                      <circle cx="100" cy="70" r="28" fill="white" fillOpacity="0.95" />
-                      <circle cx="100" cy="70" r="10" fill="#ff4d6a" />
-                      <circle cx="28" cy="28" r="14" fill="white" fillOpacity="0.92" />
-                      <circle cx="28" cy="28" r="5" fill="#7c3aed" />
-                      <circle cx="172" cy="28" r="14" fill="white" fillOpacity="0.92" />
-                      <circle cx="172" cy="28" r="5" fill="#06b6d4" />
-                      <circle cx="28" cy="112" r="14" fill="white" fillOpacity="0.92" />
-                      <circle cx="28" cy="112" r="5" fill="#f59e0b" />
-                      <circle cx="172" cy="112" r="14" fill="white" fillOpacity="0.92" />
-                      <circle cx="172" cy="112" r="5" fill="#22c55e" />
-                      <path d="M40 36 L88 62 M112 62 L160 36 M40 104 L88 78 M112 78 L160 104" stroke="white" strokeOpacity="0.5" strokeWidth="1.4" strokeDasharray="4 4" />
+                      <rect x="62" y="30" width="76" height="56" rx="10" fill="white" fillOpacity="0.95" />
+                      <rect x="76" y="42" width="48" height="6" rx="3" fill="#7c3aed" fillOpacity="0.2" />
+                      <rect x="76" y="52" width="36" height="4" rx="2" fill="#06b6d4" fillOpacity="0.25" />
+                      <rect x="76" y="60" width="28" height="4" rx="2" fill="#f59e0b" fillOpacity="0.25" />
+                      <circle cx="36" cy="54" r="18" fill="white" fillOpacity="0.92" />
+                      <path d="M30 54l4 4 8-8" stroke="#7c3aed" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                      <circle cx="164" cy="54" r="18" fill="white" fillOpacity="0.92" />
+                      <text x="164" y="59" textAnchor="middle" fontSize="11" fill="#22c55e" fontWeight="700">
+                        ✦
+                      </text>
+                      <rect x="48" y="98" width="104" height="14" rx="7" fill="white" fillOpacity="0.9" />
+                      <circle cx="60" cy="105" r="3" fill="#06b6d4" />
+                      <circle cx="68" cy="105" r="3" fill="#22c55e" />
+                      <circle cx="76" cy="105" r="3" fill="#7c3aed" />
+                      <path d="M92 101h32M92 109h24" stroke="#6b7280" strokeWidth="1.2" strokeLinecap="round" opacity="0.5" />
                     </svg>
                   </div>
                 </div>
-
-                {/* play button */}
                 <button
                   type="button"
                   aria-label="Play preview"
-                  className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#ff4d6a] text-white shadow-lg shadow-black/30 transition hover:scale-105 hover:bg-[#ff3d5a]"
+                  className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#06b6d4] text-white shadow-lg shadow-black/30 transition hover:scale-105 hover:bg-[#0891b2]"
                 >
                   <svg viewBox="0 0 24 24" className="ml-0.5 h-6 w-6" fill="currentColor">
                     <path d="M8 5.2l10 6.3-10 6.3z" />
                   </svg>
                 </button>
-
-                {/* top inset label */}
                 <div className="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-ink backdrop-blur">
                   Preview · 2:14
                 </div>
@@ -375,25 +361,22 @@ export default function AgenticBootcampPage() {
 
               <div className="border-t border-white/10 bg-[#150a33] px-5 py-4">
                 <div>
-                  <p className="font-display text-lg font-semibold tracking-tight text-white">Agentic AI</p>
+                  <p className="font-display text-lg font-semibold tracking-tight text-white">AI Tools</p>
                   <p className="text-xs text-white/60">With Somadhan AI Team</p>
                 </div>
               </div>
             </div>
-
-
           </div>
         </div>
       </section>
 
-      {/* ---------- Body ---------- */}
+      {/* Body */}
       <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8 lg:grid lg:grid-cols-[1.65fr_0.9fr] lg:gap-10 lg:py-12">
-        {/* left column */}
         <div className="min-w-0 space-y-10">
           {/* What you'll learn */}
           <section className="rounded-2xl border border-line bg-white p-6 sm:p-8">
             <h2 className="font-display text-xl font-semibold tracking-tight">WHAT YOU&apos;LL LEARN</h2>
-            <p className="mt-1.5 font-display text-base font-medium italic text-accent">Build the foundation. Explore the technology. Start creating.</p>
+            <p className="mt-1.5 font-display text-base font-medium italic text-accent">Build your personal AI toolkit — explore, choose, create and combine.</p>
             <ul className="mt-5 space-y-3.5">
               {whatYouLearn.map((item) => (
                 <li key={item} className="flex gap-3 text-sm leading-relaxed text-ink-soft">
@@ -407,71 +390,24 @@ export default function AgenticBootcampPage() {
           {/* Why Enroll */}
           <section className="rounded-2xl border border-line bg-white p-6 sm:p-8">
             <h2 className="font-display text-xl font-semibold tracking-tight">WHY ENROLL?</h2>
-            <p className="mt-1.5 font-display text-base font-medium italic text-accent">Don&apos;t Just Use AI. Learn How to Build With It.</p>
+            <p className="mt-1.5 font-display text-base font-medium italic text-accent">Don&apos;t Just Use AI. Learn to Work With AI.</p>
             <p className="mt-4 text-sm leading-relaxed text-ink-soft">
-              Generative AI has changed how we interact with software. The next step is building systems that can go beyond
-              generating an answer — systems that can understand a goal, break it into steps, use tools and take action.
+              AI tools are rapidly becoming part of everyday academic and professional workflows. This bootcamp helps learners build a personal AI toolkit and use it intelligently.
             </p>
-            <p className="mt-3 text-sm leading-relaxed text-ink-soft">
-              This bootcamp gives you a structured starting point for understanding that shift. Instead of overwhelming you
-              with advanced mathematics or complex frameworks, the focus is on understanding, experimenting and building.
-            </p>
-
             <ul className="mt-6 space-y-3">
-              <li className="flex gap-3 text-sm leading-relaxed">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-                <span>
-                  <span className="font-semibold text-ink">AI Foundations:</span>{" "}
-                  <span className="text-ink-soft">Build a clear mental model of modern AI instead of learning isolated tools.</span>
-                </span>
-              </li>
-              <li className="flex gap-3 text-sm leading-relaxed">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-                <span>
-                  <span className="font-semibold text-ink">Learn by Doing:</span>{" "}
-                  <span className="text-ink-soft">Use guided activities and assignments to turn concepts into practical experience.</span>
-                </span>
-              </li>
-              <li className="flex gap-3 text-sm leading-relaxed">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-                <span>
-                  <span className="font-semibold text-ink">Think Like a Builder:</span>{" "}
-                  <span className="text-ink-soft">Identify problems, design workflows and decide where AI actually makes sense.</span>
-                </span>
-              </li>
-              <li className="flex gap-3 text-sm leading-relaxed">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-                <span>
-                  <span className="font-semibold text-ink">Explore Modern AI:</span>{" "}
-                  <span className="text-ink-soft">Get hands-on exposure to LLMs, tools, APIs, RAG and agentic workflows.</span>
-                </span>
-              </li>
-              <li className="flex gap-3 text-sm leading-relaxed">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-                <span>
-                  <span className="font-semibold text-ink">Real-World Problems:</span>{" "}
-                  <span className="text-ink-soft">
-                    Work with use cases inspired by education, campus life, agriculture, business, productivity and community
-                    needs.
+              {whyEnrollPoints.map((p) => (
+                <li key={p.label} className="flex gap-3 text-sm leading-relaxed">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+                  <span>
+                    <span className="font-semibold text-ink">{p.label}:</span> <span className="text-ink-soft">{p.body}</span>
                   </span>
-                </span>
-              </li>
-              <li className="flex gap-3 text-sm leading-relaxed">
-                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
-                <span>
-                  <span className="font-semibold text-ink">Build Something Real:</span>{" "}
-                  <span className="text-ink-soft">
-                    Apply what you learn to a major team project and turn an idea into a working prototype.
-                  </span>
-                </span>
-              </li>
+                </li>
+              ))}
             </ul>
-
             <div className="mt-6 rounded-xl border border-accent/15 bg-accent-soft/40 px-4 py-4">
               <p className="text-xs font-semibold uppercase tracking-[0.1em] text-accent-deep">THE OBJECTIVE</p>
               <p className="mt-1.5 text-sm leading-relaxed text-ink">
-                The goal isn&apos;t to make you an AI expert in seven days. It&apos;s to give you the foundation and confidence to
-                begin.
+                By the end of seven days you&apos;ll know how to discover, evaluate, prompt and chain AI tools — and ship a working workflow you can showcase.
               </p>
             </div>
           </section>
@@ -482,23 +418,16 @@ export default function AgenticBootcampPage() {
             <div className="mt-5 flex gap-4">
               <div className="h-14 w-14 shrink-0 overflow-hidden rounded-full bg-cream ring-1 ring-line">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="https://i.pravatar.cc/150?img=15"
-                  alt="Instructor"
-                  className="h-full w-full object-cover"
-                />
+                <img src="https://i.pravatar.cc/150?img=16" alt="Instructor" className="h-full w-full object-cover" />
               </div>
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-2">
                   <h3 className="font-display text-base font-semibold">Somadhan AI Team</h3>
-                  <span className="rounded-full bg-accent-soft px-2.5 py-0.5 text-[11px] font-medium text-accent-deep">
-                    Lead Mentors
-                  </span>
+                  <span className="rounded-full bg-accent-soft px-2.5 py-0.5 text-[11px] font-medium text-accent-deep">Lead Mentors</span>
                 </div>
-                <p className="text-xs text-ink-soft">Somadhan Technologies · Applied AI &amp; Agentic Systems</p>
+                <p className="text-xs text-ink-soft">Somadhan Technologies · AI Tools & Productivity</p>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                  Mentors from Somadhan&apos;s Applied Machine Learning, Agri-Informatics and Multilingual AI teams — building
-                  production agents for agriculture, government and citizen services at scale.
+                  Mentors from Somadhan&apos;s Applied AI and Training teams — helping students and teams turn AI tools into everyday workflows.
                 </p>
                 <div className="mt-3 flex gap-2">
                   <a href="#" aria-label="LinkedIn" className="flex h-7 w-7 items-center justify-center rounded-full border border-line text-ink-soft hover:text-accent">
@@ -526,7 +455,7 @@ export default function AgenticBootcampPage() {
           {/* Who this course is for */}
           <section className="rounded-2xl border border-line bg-white p-6 sm:p-8">
             <h2 className="font-display text-xl font-semibold tracking-tight">WHO THIS COURSE IS FOR</h2>
-            <p className="mt-1.5 font-display text-base font-medium italic text-accent">Start your AI journey with the right foundation.</p>
+            <p className="mt-1.5 font-display text-base font-medium italic text-accent">Curiosity + a laptop + willingness to experiment are enough.</p>
             <ul className="mt-5 space-y-3.5">
               {whoIsFor.map((t) => (
                 <li key={t} className="flex gap-3 text-sm leading-relaxed text-ink">
@@ -536,20 +465,15 @@ export default function AgenticBootcampPage() {
               ))}
             </ul>
             <div className="mt-6 rounded-xl border border-accent/15 bg-accent-soft/40 px-4 py-3.5">
-              <p className="text-xs font-semibold uppercase tracking-[0.1em] text-accent-deep">
-                NO ADVANCED AI/ML BACKGROUND REQUIRED
-              </p>
-              <p className="mt-1 text-sm leading-relaxed text-ink">Curiosity and willingness to build are enough to get started.</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.1em] text-accent-deep">NO ADVANCED BACKGROUND REQUIRED</p>
+              <p className="mt-1 text-sm leading-relaxed text-ink">Curiosity + a laptop + willingness to experiment are enough to get started.</p>
             </div>
           </section>
 
           {/* Course Outline */}
           <section id="course-outline" className="rounded-2xl border border-line bg-white p-6 sm:p-8 scroll-mt-28">
             <h2 className="font-display text-lg font-semibold tracking-tight">Course Outline</h2>
-            <p className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-ink-soft">
-              AGENTIC AI • 7 DAYS • HANDS-ON LEARNING
-            </p>
-
+            <p className="mt-1 text-xs font-medium uppercase tracking-[0.12em] text-ink-soft">AI TOOLS • 7 DAYS • HANDS-ON LEARNING</p>
             <div className="mt-6 divide-y divide-line overflow-hidden rounded-xl border border-line">
               {courseOutline.map((mod) => (
                 <details key={mod.title} className="group bg-white open:bg-cream/40">
@@ -568,10 +492,7 @@ export default function AgenticBootcampPage() {
                     <p className="text-xs font-semibold uppercase tracking-[0.12em] text-ink-soft">Explore</p>
                     <div className="mt-3 flex flex-wrap gap-2.5">
                       {mod.explore.map((item) => (
-                        <span
-                          key={item}
-                          className="rounded-full border border-line bg-white px-3.5 py-1.5 text-xs leading-relaxed text-ink-soft shadow-sm"
-                        >
+                        <span key={item} className="rounded-full border border-line bg-white px-3.5 py-1.5 text-xs leading-relaxed text-ink-soft shadow-sm">
                           {item}
                         </span>
                       ))}
@@ -584,34 +505,8 @@ export default function AgenticBootcampPage() {
 
           {/* Enrollment — hidden until Enroll Now is clicked */}
           <section id="enroll-form-section" className="hidden scroll-mt-28">
-            <EnrollmentForm course={getCourseById("agentic-ai-bootcamp")!} />
+            <EnrollmentForm course={getCourseById("ai-tools-bootcamp")!} />
           </section>
-
-          {/* Reviews */}
-          {/* Learner reviews — hidden for now */}
-          {false && (
-            <section className="rounded-2xl border border-line bg-white p-6 sm:p-8">
-              <h2 className="font-display text-lg font-semibold tracking-tight">Learner reviews from other Somadhan AI courses</h2>
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-xl border border-line bg-cream/30 p-5">
-                  <p className="text-sm font-semibold text-ink">Selami A.</p>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                    &ldquo;What I loved about the course was the comprehensive coverage of essential AI topics, guided by the expertise of the mentors.
-                    The course provided a clear roadmap for…&rdquo;
-                  </p>
-                  <button type="button" className="mt-3 text-xs font-medium text-accent hover:text-accent-deep">
-                    View More
-                  </button>
-                </div>
-                <div className="rounded-xl border border-line bg-cream/30 p-5">
-                  <p className="text-sm font-semibold text-ink">Chris C.</p>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                    &ldquo;Simple enough to make it easy to grasp complex topic, inspiring speaker and a &lsquo;lifelong learning&rsquo; approach.&rdquo;
-                  </p>
-                </div>
-              </div>
-            </section>
-          )}
 
           {/* FAQ */}
           <section className="rounded-2xl border border-line bg-white p-6 sm:p-8">
@@ -639,13 +534,10 @@ export default function AgenticBootcampPage() {
         {/* right sidebar */}
         <div className="mt-10 lg:mt-0">
           <div className="sticky top-24 space-y-6">
-            {/* info card */}
             <div className="overflow-hidden rounded-2xl border border-line bg-white shadow-sm">
               <div className="p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">
-                  7-DAY AGENTIC AI BOOTCAMP
-                </p>
-                <h3 className="mt-1.5 font-display text-lg font-semibold leading-tight">Your First Step Into Agentic AI</h3>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">7-DAY AI TOOLS BOOTCAMP</p>
+                <h3 className="mt-1.5 font-display text-lg font-semibold leading-tight">Build Your Personal AI Toolkit</h3>
 
                 <ul className="mt-4 space-y-2.5 text-sm">
                   <li className="flex items-center gap-2.5 text-ink">
@@ -671,6 +563,15 @@ export default function AgenticBootcampPage() {
                   <li className="flex items-center gap-2.5 text-ink">
                     <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sky/10 text-sky">
                       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6">
+                        <path d="M12 3l1 2 1 3 1 2H9l1-2 1-3z" />
+                        <circle cx="12" cy="9" r="2.5" />
+                      </svg>
+                    </span>
+                    Multiple AI Tool Categories
+                  </li>
+                  <li className="flex items-center gap-2.5 text-ink">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-forest/10 text-forest">
+                      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6">
                         <path d="M9 5H7a2 2 0 00-2 2v11a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2" />
                         <path d="M9 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                         <path d="M9 13l2 2 4-4" strokeLinecap="round" strokeLinejoin="round" />
@@ -679,29 +580,34 @@ export default function AgenticBootcampPage() {
                     Daily Practical Assignments
                   </li>
                   <li className="flex items-center gap-2.5 text-ink">
-                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-forest/10 text-forest">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-50 text-orange-600">
                       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6">
-                        <circle cx="12" cy="12" r="8" />
-                        <path d="M2 12h20M12 2a15 15 0 010 20A15 15 0 0112 2z" />
-                        <path d="M8 12c1.2-2 3.5-3.2 4-5.2.5 2 2.8 3.2 4 5.2-1.2 2-3.5 3.2-4 5.2-.5-2-2.8-3.2-4-5.2z" />
+                        <circle cx="12" cy="12" r="5" />
+                        <path d="M12 8v4l2.5 1.5" />
                       </svg>
                     </span>
-                    Real-World AI Use Cases
+                    Real-World AI Challenges
+                  </li>
+                  <li className="flex items-center gap-2.5 text-ink">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-50 text-amber-600">
+                      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6">
+                        <rect x="4" y="8" width="16" height="8" rx="2" />
+                        <path d="M8 12h8M12 8v8" />
+                      </svg>
+                    </span>
+                    AI Productivity & Automation
+                  </li>
+                  <li className="flex items-center gap-2.5 text-ink">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-sky/10 text-sky">
+                      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6">
+                        <path d="M8 9h8M8 13h5M10 17h4" />
+                        <rect x="4" y="6" width="16" height="12" rx="2" />
+                      </svg>
+                    </span>
+                    AI-Assisted Coding
                   </li>
                   <li className="flex items-center gap-2.5 text-ink">
                     <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#ede8ff] text-[#7c3aed]">
-                      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6">
-                        <rect x="5" y="7" width="14" height="10" rx="2" />
-                        <circle cx="9" cy="12" r="1.2" fill="currentColor" stroke="none" />
-                        <circle cx="15" cy="12" r="1.2" fill="currentColor" stroke="none" />
-                        <path d="M9 15c1 1 2 1.5 3 1.5s2-.5 3-1.5" strokeLinecap="round" />
-                        <path d="M12 7V5M8 17l-1.5 2M16 17l1.5 2" strokeLinecap="round" />
-                      </svg>
-                    </span>
-                    Build Your First AI Agent
-                  </li>
-                  <li className="flex items-center gap-2.5 text-ink">
-                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-orange-50 text-orange-600">
                       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6">
                         <circle cx="9" cy="8" r="2.5" />
                         <path d="M4.5 18a4.5 4.5 0 019 0" />
@@ -716,20 +622,9 @@ export default function AgenticBootcampPage() {
                       <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6">
                         <circle cx="12" cy="8" r="5" />
                         <path d="M8.5 13l-1 6 4.5-2 4.5 2-1-6" strokeLinejoin="round" />
-                        <path d="M9.5 8l1.2 1.8L13 9l-1.6 2.4L12 13l-1.5-1.6z" fill="currentColor" stroke="none" />
                       </svg>
                     </span>
                     Certificate of Completion
-                  </li>
-                  <li className="flex items-center gap-2.5 text-ink">
-                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-cream text-ink">
-                      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6">
-                        <rect x="3" y="7" width="18" height="12" rx="1.5" />
-                        <path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2" />
-                        <path d="M7 11h10M7 15h6" strokeLinecap="round" />
-                      </svg>
-                    </span>
-                    Project Portfolio Recognition
                   </li>
                 </ul>
 
@@ -740,9 +635,14 @@ export default function AgenticBootcampPage() {
                 </div>
                 <p className="mt-1 text-center text-xs text-ink-soft">Inclusive · One-time · 50% off MRP ₹599</p>
 
-                <EnrollButton variant="sidebar" label="Enroll Now — ₹299" />
-
-                <p className="mt-3 text-center text-xs font-medium text-ink-soft">Secure payment via Razorpay · <span className="line-through decoration-ink-soft/40">₹599</span> ₹299</p>
+                <EnrollButton
+                  variant="sidebar"
+                  label="Enroll Now — ₹299"
+                  className="mt-6 flex w-full items-center justify-center rounded-full bg-[#06b6d4] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-md transition hover:bg-[#0891b2]"
+                />
+                <p className="mt-3 text-center text-xs font-medium text-ink-soft">
+                  Secure payment via Razorpay · <span className="line-through decoration-ink-soft/40">₹599</span> ₹299
+                </p>
               </div>
 
               <div className="border-t border-line bg-cream/50 px-6 py-4">
@@ -753,7 +653,6 @@ export default function AgenticBootcampPage() {
               </div>
             </div>
 
-            {/* Why Learn With Us */}
             <div className="rounded-2xl border border-line bg-white p-5">
               <p className="text-xs font-semibold uppercase tracking-[0.12em] text-accent">Why Learn With Us?</p>
               <ul className="mt-3 space-y-2.5 text-xs leading-relaxed text-ink">
@@ -779,11 +678,11 @@ export default function AgenticBootcampPage() {
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                  Focus on understanding, not just frameworks
+                  Focus on understanding rather than tool memorisation
                 </li>
                 <li className="flex gap-2">
                   <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                  Build something you can showcase
+                  Build outputs you can showcase
                 </li>
               </ul>
             </div>
@@ -791,7 +690,6 @@ export default function AgenticBootcampPage() {
         </div>
       </div>
 
-      {/* Breadcrumb bottom spacer */}
       <div className="mx-auto max-w-6xl px-5 py-6 sm:px-8">
         <Link href="/training" className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-deep">
           <span aria-hidden="true">&larr;</span> Back to Training &amp; Internship

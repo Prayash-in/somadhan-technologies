@@ -35,6 +35,21 @@ export const COURSES: Course[] = [
     level: "Beginner",
     isActive: true,
   },
+  {
+    id: "ai-tools-bootcamp",
+    slug: "ai-tools-bootcamp",
+    name: "7-Day AI Tools Bootcamp",
+    description:
+      "Build your personal AI toolkit — master prompting, research, writing, design, coding, data & automation in 7 hands-on days.",
+    pricePaise: 29900,
+    priceDisplay: "₹299",
+    compareAtPricePaise: 59900,
+    compareAtPriceDisplay: "₹599",
+    currency: "INR",
+    duration: "7 Days · 14+ Hours",
+    level: "Beginner",
+    isActive: true,
+  },
 ];
 
 export function getCourseById(id: string): Course | undefined {

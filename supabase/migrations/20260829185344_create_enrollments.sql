@@ -122,11 +122,12 @@ create policy "Allow public read courses"
 
 grant all on public.courses to anon, authenticated, service_role;
 
--- Seed courses — single functional bootcamp only (no separate course pages).
--- Keep previous site structure: enrollment only via /training/agentic-ai-bootcamp with hidden form revealed on Enroll Now click.
+-- Seed courses — two functional bootcamps (no separate course pages).
+-- Keep previous site structure: enrollment only via /training/* with hidden form revealed on Enroll Now click.
 insert into public.courses (id, slug, name, description, price_paise, currency, is_active)
 values
-  ('agentic-ai-bootcamp', 'agentic-ai-bootcamp', '7-Days Agentic AI Bootcamp', 'Your first step into Generative & Agentic AI — foundations, prompting, tools & a real team prototype in 7 days.', 29900, 'INR', true)
+  ('agentic-ai-bootcamp', 'agentic-ai-bootcamp', '7-Days Agentic AI Bootcamp', 'Your first step into Generative & Agentic AI — foundations, prompting, tools & a real team prototype in 7 days.', 29900, 'INR', true),
+  ('ai-tools-bootcamp', 'ai-tools-bootcamp', '7-Day AI Tools Bootcamp', 'Build your personal AI toolkit — master prompting, research, writing, design, coding, data & automation in 7 hands-on days.', 29900, 'INR', true)
 on conflict (id) do update set
   name = excluded.name,
   description = excluded.description,
@@ -134,5 +135,5 @@ on conflict (id) do update set
   is_active = true,
   updated_at = now();
 
--- Deactivate any legacy placeholder courses if they were seeded before (keeps only one functional bootcamp).
-update public.courses set is_active = false where id <> 'agentic-ai-bootcamp';
+-- Deactivate any legacy placeholder courses if they were seeded before.
+update public.courses set is_active = false where id not in ('agentic-ai-bootcamp', 'ai-tools-bootcamp');

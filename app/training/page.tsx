@@ -157,7 +157,7 @@ export default function TrainingPage() {
                   </span>
                 </span>
                 <span className="text-xs text-white/55">
-                  Next cohort: <span className="font-semibold text-white">15 Sept 2026</span> · Limited seats
+                  Next cohort: <span className="font-semibold text-white">Coming soon</span> · Limited seats
                 </span>
               </div>
             </div>
@@ -223,6 +223,133 @@ export default function TrainingPage() {
             </div>
           </Link>
         </Reveal>
+
+        <Reveal delay={0.14}>
+          <Link
+            href="/training/ai-tools-bootcamp"
+            className="group relative mt-6 flex flex-col overflow-hidden rounded-[1.25rem] border border-[#2a1a5a] bg-[#150a33] shadow-xl shadow-[#150a33]/30 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#150a33]/40 lg:flex-row"
+          >
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 opacity-40"
+              style={{
+                backgroundImage:
+                  "linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px)",
+                backgroundSize: "32px 32px",
+              }}
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0"
+              style={{
+                background:
+                  "radial-gradient(60% 80% at 75% 20%, rgba(14, 165, 233, 0.28), transparent 60%), radial-gradient(45% 60% at 20% 85%, rgba(124, 58, 237, 0.18), transparent 60%)",
+              }}
+            />
+
+            <div className="relative flex flex-1 flex-col p-7 sm:p-8 lg:p-10">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.12em] text-white backdrop-blur">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#06b6d4]" />
+                  7-Day Bootcamp
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-[11px] font-medium text-[#1a1033]">
+                  <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-[#0aa06a] text-white">
+                    <svg viewBox="0 0 12 12" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth="1.8">
+                      <path d="M2.5 6.5l2 2 4.5-4.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
+                  Beginner
+                </span>
+                <span className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[11px] font-medium text-white backdrop-blur">
+                  Certificate Included
+                </span>
+              </div>
+
+              <h3 className="mt-5 font-display text-2xl font-semibold leading-tight tracking-tight text-white sm:text-3xl">
+                7-Day AI Tools Bootcamp
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/70">
+                Build your personal AI toolkit — prompting, research, writing, design, coding, data &amp; automation in 7 hands-on days.
+              </p>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-medium text-white backdrop-blur">
+                  Multiple Tools
+                </span>
+                <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-medium text-white backdrop-blur">
+                  Productivity
+                </span>
+                <span className="rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-medium text-white backdrop-blur">
+                  Workflows
+                </span>
+              </div>
+
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <span className="inline-flex items-center gap-2 rounded-full bg-[#06b6d4] px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-black/20 transition group-hover:bg-[#0891b2] group-hover:shadow-xl">
+                  View Program
+                  <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">
+                    &rarr;
+                  </span>
+                </span>
+                <span className="text-xs text-white/55">
+                  Next cohort: <span className="font-semibold text-white">Coming soon</span> · Limited seats
+                </span>
+              </div>
+            </div>
+
+            <div className="relative flex w-full flex-col justify-between border-t border-white/10 bg-white/[0.04] p-7 backdrop-blur sm:p-8 lg:w-[340px] lg:shrink-0 lg:border-l lg:border-t-0">
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute -right-8 -top-8 h-40 w-40 rounded-full bg-[radial-gradient(circle_at_center,rgba(14,165,233,0.22),transparent_70%)]"
+              />
+
+              <div className="relative">
+                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-white/60">What you&apos;ll do</p>
+                <ul className="mt-4 space-y-2.5 text-sm leading-relaxed text-white/85">
+                  <li className="flex gap-2">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#06b6d4]" />
+                    Explore 12+ AI tool categories
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#06b6d4]" />
+                    Chain tools into workflows
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#06b6d4]" />
+                    Build a showcase project
+                  </li>
+                </ul>
+
+                <div className="mt-6 grid grid-cols-3 gap-3 border-t border-white/10 pt-6 text-center">
+                  <div className="flex flex-col items-center">
+                    <p className="flex h-7 items-end font-display text-xl font-semibold leading-none text-white">7</p>
+                    <p className="mt-1 text-[11px] uppercase tracking-[0.12em] text-white/50">Days</p>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <p className="flex h-7 items-end font-display text-[13px] font-semibold leading-none text-white">Beginner</p>
+                    <p className="mt-2 text-[11px] uppercase tracking-[0.12em] text-white/50">Level</p>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <p className="flex h-7 items-end font-display text-xl font-semibold leading-none text-white">1</p>
+                    <p className="mt-1 text-[11px] uppercase tracking-[0.12em] text-white/50">Project</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative mt-6 flex items-center gap-3 border-t border-white/10 pt-6">
+                <div className="flex -space-x-2">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-[#150a33] bg-white text-[10px] font-bold text-[#150a33]">ST</span>
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-[#150a33] bg-[#06b6d4] text-[10px] font-bold text-white">AT</span>
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-[#150a33] bg-white/90 text-[10px] font-bold text-[#150a33]">AI</span>
+                </div>
+                <p className="text-xs leading-snug text-white/60">
+                  Mentors from <span className="font-medium text-white">Somadhan</span> &amp; industry
+                </p>
+              </div>
+            </div>
+          </Link>
+        </Reveal>
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
@@ -253,12 +380,19 @@ export default function TrainingPage() {
             </Reveal>
           ))}
         </div>
-        <Reveal delay={0.2} className="mt-6 text-center">
+        <Reveal delay={0.2} className="mt-6 flex flex-wrap items-center justify-center gap-4 text-center">
           <Link
             href="/training/agentic-ai-bootcamp"
             className="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-deep"
           >
-            Explore featured bootcamp <span aria-hidden="true">&rarr;</span>
+            Explore Agentic AI Bootcamp <span aria-hidden="true">&rarr;</span>
+          </Link>
+          <span className="text-ink-soft/30">·</span>
+          <Link
+            href="/training/ai-tools-bootcamp"
+            className="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-deep"
+          >
+            Explore AI Tools Bootcamp <span aria-hidden="true">&rarr;</span>
           </Link>
         </Reveal>
       </section>
