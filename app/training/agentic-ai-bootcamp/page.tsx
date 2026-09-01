@@ -480,14 +480,6 @@ export default function AgenticBootcampPage() {
           <section className="rounded-2xl border border-line bg-white p-6 sm:p-8">
             <h2 className="font-display text-lg font-semibold tracking-tight">Instructor</h2>
             <div className="mt-5 flex gap-4">
-              <div className="h-14 w-14 shrink-0 overflow-hidden rounded-full bg-cream ring-1 ring-line">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="https://i.pravatar.cc/150?img=15"
-                  alt="Instructor"
-                  className="h-full w-full object-cover"
-                />
-              </div>
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-2">
                   <h3 className="font-display text-base font-semibold">Somadhan AI Team</h3>
