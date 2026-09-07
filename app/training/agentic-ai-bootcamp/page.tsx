@@ -329,48 +329,16 @@ export default function AgenticBootcampPage() {
           {/* right: video / cover */}
           <div className="relative">
             <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0c0820] shadow-2xl shadow-black/40">
-              {/* placeholder cover with agentic network visual */}
-              <div
-                className="relative aspect-[16/10] w-full bg-cover bg-center"
-                style={{
-                  backgroundImage:
-                    "radial-gradient(60% 80% at 50% 50%, rgba(124,58,237,0.55), transparent 70%), linear-gradient(180deg, #1e0f4a 0%, #0c0820 100%)",
-                }}
-              >
-                {/* network dots */}
-                <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative h-48 w-64">
-                    <svg viewBox="0 0 200 140" className="h-full w-full" fill="none">
-                      <circle cx="100" cy="70" r="28" fill="white" fillOpacity="0.95" />
-                      <circle cx="100" cy="70" r="10" fill="#ff4d6a" />
-                      <circle cx="28" cy="28" r="14" fill="white" fillOpacity="0.92" />
-                      <circle cx="28" cy="28" r="5" fill="#7c3aed" />
-                      <circle cx="172" cy="28" r="14" fill="white" fillOpacity="0.92" />
-                      <circle cx="172" cy="28" r="5" fill="#06b6d4" />
-                      <circle cx="28" cy="112" r="14" fill="white" fillOpacity="0.92" />
-                      <circle cx="28" cy="112" r="5" fill="#f59e0b" />
-                      <circle cx="172" cy="112" r="14" fill="white" fillOpacity="0.92" />
-                      <circle cx="172" cy="112" r="5" fill="#22c55e" />
-                      <path d="M40 36 L88 62 M112 62 L160 36 M40 104 L88 78 M112 78 L160 104" stroke="white" strokeOpacity="0.5" strokeWidth="1.4" strokeDasharray="4 4" />
-                    </svg>
-                  </div>
-                </div>
-
-                {/* play button */}
-                <button
-                  type="button"
-                  aria-label="Play preview"
-                  className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#ff4d6a] text-white shadow-lg shadow-black/30 transition hover:scale-105 hover:bg-[#ff3d5a]"
-                >
-                  <svg viewBox="0 0 24 24" className="ml-0.5 h-6 w-6" fill="currentColor">
-                    <path d="M8 5.2l10 6.3-10 6.3z" />
-                  </svg>
-                </button>
-
-                {/* top inset label */}
-                <div className="absolute left-3 top-3 rounded-full bg-white/90 px-2.5 py-1 text-[11px] font-semibold text-ink backdrop-blur">
-                  Preview · 2:14
-                </div>
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-black">
+                <iframe
+                  className="absolute inset-0 h-full w-full"
+                  src="https://www.youtube.com/embed/iyqoT-2xgM4?rel=0&modestbranding=1"
+                  title="7-Days Agentic AI Bootcamp - Preview"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                />
               </div>
 
               <div className="border-t border-white/10 bg-[#150a33] px-5 py-4">

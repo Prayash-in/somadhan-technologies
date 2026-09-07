@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import ScrollToTop from "@/components/ScrollToTop";
+import BootcampPromo from "@/components/BootcampPromo";
 import "./globals.css";
 
 const inter = Inter({
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body className="min-h-screen bg-paper font-sans text-ink">
         <ScrollProgress />
+        <BootcampPromo />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

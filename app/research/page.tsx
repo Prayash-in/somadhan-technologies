@@ -77,50 +77,50 @@ export default function ResearchPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
-        <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
-          <h2 className="font-display text-2xl font-medium tracking-tight sm:text-3xl">
-            Publications &amp;{" "}
-            <em className="text-gradient animate-shimmer">preprints</em>
-          </h2>
-          <p className="text-sm text-ink-soft">
-            Selected outputs from the research program.
-          </p>
-        </div>
+        {false && (
+          <>
+            <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+              <h2 className="font-display text-2xl font-medium tracking-tight sm:text-3xl">
+                Publications &amp;{" "}
+                <em className="text-gradient animate-shimmer">preprints</em>
+              </h2>
+              <p className="text-sm text-ink-soft">Selected outputs from the research program.</p>
+            </div>
 
-        <div className="mt-12 divide-y divide-line rounded-2xl border border-line bg-white shadow-sm shadow-ink/5">
-          {publications.map((pub, i) => {
-            const tone = tones[statusTones[pub.status] ?? "green"];
-            return (
-              <Reveal key={pub.title} delay={i * 0.04}>
-                <div className="grid gap-4 px-8 py-7 sm:grid-cols-[1fr_auto] sm:gap-10">
-                  <div>
-                    <h3 className="font-display text-lg font-medium leading-snug sm:text-xl">
-                      {pub.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-ink-soft">
-                      {pub.authors} &middot; {pub.venue} &middot; {pub.year}
-                    </p>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {pub.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full border border-line px-3 py-1 text-[11px] uppercase tracking-wider text-ink-soft"
-                        >
-                          {tag}
-                        </span>
-                      ))}
+            <div className="mt-12 divide-y divide-line rounded-2xl border border-line bg-white shadow-sm shadow-ink/5">
+              {publications.map((pub, i) => {
+                const tone = tones[statusTones[pub.status] ?? "green"];
+                return (
+                  <Reveal key={pub.title} delay={i * 0.04}>
+                    <div className="grid gap-4 px-8 py-7 sm:grid-cols-[1fr_auto] sm:gap-10">
+                      <div>
+                        <h3 className="font-display text-lg font-medium leading-snug sm:text-xl">{pub.title}</h3>
+                        <p className="mt-2 text-sm text-ink-soft">
+                          {pub.authors} &middot; {pub.venue} &middot; {pub.year}
+                        </p>
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          {pub.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="rounded-full border border-line px-3 py-1 text-[11px] uppercase tracking-wider text-ink-soft"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      <span
+                        className={`h-fit w-fit rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] ${tone.chip}`}
+                      >
+                        {pub.status}
+                      </span>
                     </div>
-                  </div>
-                  <span
-                    className={`h-fit w-fit rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] ${tone.chip}`}
-                  >
-                    {pub.status}
-                  </span>
-                </div>
-              </Reveal>
-            );
-          })}
-        </div>
+                  </Reveal>
+                );
+              })}
+            </div>
+          </>
+        )}
 
         <Reveal className="mt-12">
           <p className="text-sm text-ink-soft">
