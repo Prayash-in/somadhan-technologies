@@ -238,7 +238,7 @@ export default function BootcampPromo() {
                 <div className="relative h-16 w-28 shrink-0 overflow-hidden rounded-lg bg-black">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="https://img.youtube.com/vi/iyqoT-2xgM4/hqdefault.jpg"
+                    src="https://img.youtube.com/vi/HT_7h3Ixowk/hqdefault.jpg"
                     alt="Bootcamp preview"
                     className="h-full w-full object-cover opacity-90 transition group-hover:scale-105 group-hover:opacity-100"
                   />

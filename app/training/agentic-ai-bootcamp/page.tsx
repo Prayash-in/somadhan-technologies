@@ -332,7 +332,7 @@ export default function AgenticBootcampPage() {
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-black">
                 <iframe
                   className="absolute inset-0 h-full w-full"
-                  src="https://www.youtube.com/embed/iyqoT-2xgM4?rel=0&modestbranding=1"
+                  src="https://www.youtube.com/embed/HT_7h3Ixowk?rel=0&modestbranding=1"
                   title="7-Days Agentic AI Bootcamp - Preview"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
