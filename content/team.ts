@@ -94,6 +94,34 @@ export const careers: Career[] = [
   },
 ];
 
+export type Advisor = {
+  name: string;
+  role: string;
+  qualification: string;
+  image: string;
+};
+
+export const advisors: Advisor[] = [
+  {
+    name: "Dr. Utpal Barman",
+    role: "Research Advisor",
+    qualification: "B.E., M.E., PhD",
+    image: "/advisors/Utpal Barman.jpeg",
+  },
+  {
+    name: "Dr. Amarjyoti Pathak",
+    role: "Academic Advisor",
+    qualification: "B.E., M.Tech., PhD",
+    image: "/advisors/Amarjyoti Pathak.png",
+  },
+  {
+    name: "Leena Baishya",
+    role: "Legal Advisor",
+    qualification: "B.A., L.L.B.",
+    image: "/advisors/Leena Baishya.png",
+  },
+];
+
 export const values = [
   {
     title: "Research first",

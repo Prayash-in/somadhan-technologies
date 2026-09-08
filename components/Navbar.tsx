@@ -27,7 +27,7 @@ const aboutItems: NavChild[] = [
   },
   {
     href: "/team",
-    label: "Team",
+    label: "Team & Advisors",
     Icon: CitizenGlyph,
     tile: "bg-sky-soft text-sky-deep",
   },

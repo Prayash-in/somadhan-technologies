@@ -3,10 +3,10 @@ import Reveal from "@/components/Reveal";
 import { MailGlyph } from "@/components/glyphs";
 import { ViewTransition } from "react";
 import { tones } from "@/components/tone";
-import { members, values } from "@/content/team";
+import { members, advisors, values } from "@/content/team";
 
 export const metadata = {
-  title: "Team & Careers",
+  title: "Team & Advisors",
   description:
     "The people behind Somadhan Technologies — engineers, researchers and operators building inclusive technology for the real world.",
 };
@@ -19,7 +19,7 @@ export default function TeamPage() {
   return (
     <ViewTransition name="page">
       <PageHero
-        eyebrow="Team"
+        eyebrow="Team & Advisors"
         title={
           <>
             Problem solvers at heart.{" "}
@@ -76,6 +76,43 @@ export default function TeamPage() {
               </Reveal>
             );
           })}
+        </div>
+
+        {/* Advisors */}
+        <div className="mt-20 sm:mt-28">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <h2 className="font-display text-2xl font-medium tracking-tight sm:text-3xl">Advisors</h2>
+            <p className="max-w-md text-sm leading-relaxed text-ink-soft">
+              Guiding our research, academic and legal strategy with deep domain experience.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {advisors.map((advisor, i) => {
+              const tone = tones[avatarTones[(i + 2) % avatarTones.length]];
+              return (
+                <Reveal key={advisor.name} delay={i * 0.06} className="h-full">
+                  <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-paper p-8 transition-all hover:-translate-y-1 hover:border-transparent hover:shadow-xl hover:shadow-ink/10">
+                    <div
+                      aria-hidden="true"
+                      className={`absolute inset-x-0 top-0 h-1 bg-linear-to-r ${tone.topBar} opacity-0 transition-opacity duration-300 group-hover:opacity-100`}
+                    />
+                    <div className="h-32 w-32 overflow-hidden rounded-2xl border border-line bg-white shadow-sm sm:h-36 sm:w-36">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={advisor.image}
+                        alt={advisor.name}
+                        className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
+                    <h3 className="mt-6 font-display text-lg font-medium leading-tight">{advisor.name}</h3>
+                    <p className="text-xs font-medium tracking-wide text-ink-soft">{advisor.qualification}</p>
+                    <p className={`mt-1 text-sm font-medium ${tone.text}`}>{advisor.role}</p>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
         </div>
 
         <div className="mt-20 sm:mt-28">
