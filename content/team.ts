@@ -4,6 +4,7 @@ export type Member = {
   focus?: string;
   initials: string;
   email?: string;
+  image?: string;
 };
 
 export const members: Member[] = [
@@ -12,42 +13,49 @@ export const members: Member[] = [
     role: "Founder & Director",
     initials: "HP",
     email: "director@somadhantechnologies.in",
+    image: "/team/Himani.jpeg",
   },
   {
     name: "Prayash Bhagawati",
     role: "Chief Technology Officer (CTO) & Director – Projects",
     initials: "PB",
     email: "prayash.cto.somadhantechnologies@gmail.com",
+    image: "/team/Prayash.jpeg",
   },
   {
     name: "Hirakjyoti Sarma",
     role: "Head – Operations & Administration",
     initials: "HS",
     email: "hirak.somadhantechnologies@gmail.com",
+    image: "/team/Hirak.jpeg",
   },
   {
     name: "Piyush Deka",
     role: "Head – Projects & Business Development",
     initials: "PD",
     email: "piyush.somadhantechnologies@gmail.com",
+    image: "/team/Piyush.jpeg",
   },
   {
     name: "Kallul Gogoi",
     role: "Head – Training & Skill Development",
     initials: "KG",
     email: "kallul.somadhantechnologies@gmail.com",
+    image: "/team/Kallul.jpeg",
   },
   {
     name: "Dhritiman Bayan",
     role: "Head – Research & Innovation",
     initials: "DB",
     email: "dhritiman.somadhantechnologies@gmail.com",
+    image: "/team/Dhritiman.jpeg",
   },
   {
     name: "Manjit Ch. Patowary",
     role: "Head – Finance & Accounts",
     initials: "MP",
     email: "mancivil2@gmail.com",
+    image: "/team/Manjit.jpeg",
   },
 ];
 

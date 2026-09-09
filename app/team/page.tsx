@@ -45,11 +45,23 @@ export default function TeamPage() {
                     aria-hidden="true"
                     className={`absolute inset-x-0 top-0 h-1 bg-linear-to-r ${tone.topBar} opacity-0 transition-opacity duration-300 group-hover:opacity-100`}
                   />
-                  <div
-                    className={`flex h-14 w-14 items-center justify-center rounded-2xl font-display text-lg font-medium text-white shadow-md ${tone.tile}`}
-                  >
-                    {member.initials}
-                  </div>
+                  {member.image ? (
+                    <div className="h-32 w-32 overflow-hidden rounded-2xl border border-line bg-white shadow-sm sm:h-36 sm:w-36">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
+                  ) : (
+                    <div
+                      className={`flex h-14 w-14 items-center justify-center rounded-2xl font-display text-lg font-medium text-white shadow-md ${tone.tile}`}
+                    >
+                      {member.initials}
+                    </div>
+                  )}
                   <h3 className="mt-6 font-display text-lg font-medium">
                     {member.name}
                   </h3>
