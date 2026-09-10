@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getSupabaseServerClient } from "@/lib/supabase";
 import { getCourseById } from "@/lib/courses";
+import ReceiptDownloader from "@/components/ReceiptDownloader";
 
 export const dynamic = "force-dynamic";
 
@@ -8,29 +9,39 @@ type Props = {
   searchParams: Promise<{ enrollmentId?: string; course?: string }>;
 };
 
+type SuccessEnrollment = {
+  id: string;
+  name: string;
+  email: string;
+  phone: string | null;
+  institution: string | null;
+  city: string | null;
+  course_name: string;
+  course_id: string;
+  amount: number;
+  currency: string | null;
+  payment_status: string;
+  razorpay_order_id: string | null;
+  razorpay_payment_id: string | null;
+  created_at: string | null;
+};
+
 export default async function EnrollmentSuccessPage({ searchParams }: Props) {
   const { enrollmentId, course: courseId } = await searchParams;
 
-  let enrollment: {
-    id: string;
-    name: string;
-    email: string;
-    course_name: string;
-    course_id: string;
-    amount: number;
-    payment_status: string;
-    razorpay_payment_id: string | null;
-  } | null = null;
+  let enrollment: SuccessEnrollment | null = null;
 
   if (enrollmentId) {
     try {
       const supabase = getSupabaseServerClient();
       const { data } = await supabase
         .from("enrollments")
-        .select("id, name, email, course_name, course_id, amount, payment_status, razorpay_payment_id")
+        .select(
+          "id, name, email, phone, institution, city, course_name, course_id, amount, currency, payment_status, razorpay_order_id, razorpay_payment_id, created_at"
+        )
         .eq("id", enrollmentId)
         .maybeSingle();
-      if (data) enrollment = data as unknown as typeof enrollment;
+      if (data) enrollment = data as unknown as SuccessEnrollment;
     } catch {
       // ignore
     }
@@ -89,6 +100,9 @@ export default async function EnrollmentSuccessPage({ searchParams }: Props) {
             </div>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
+              {enrollment && enrollment.payment_status === "PAID" ? (
+                <ReceiptDownloader enrollment={enrollment} />
+              ) : null}
               <Link
                 href="/training/agentic-ai-bootcamp"
                 className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-medium text-white shadow-md hover:bg-accent-deep"
