@@ -140,6 +140,13 @@ export default function EnrollmentForm({ course }: { course: Course }) {
           setStatus("idle");
           return;
         }
+        // Single-payment rule: this email already paid for this course — send to receipt
+        if (res.status === 409 && (data as { alreadyPaid?: boolean })?.alreadyPaid && (data as { enrollmentId?: string })?.enrollmentId) {
+          const paidId = (data as { enrollmentId: string }).enrollmentId;
+          const paidCourse = (data as { courseId?: string }).courseId || course.id;
+          router.push(`/enrollment/success?enrollmentId=${encodeURIComponent(paidId)}&course=${encodeURIComponent(paidCourse)}`);
+          return;
+        }
         if (data?.errors && Array.isArray(data.errors)) {
           const fe: FieldErrors = {};
           for (const er of data.errors as { field: string; message: string }[]) {
@@ -212,6 +219,8 @@ export default function EnrollmentForm({ course }: { course: Course }) {
             const vData = await verifyRes.json().catch(() => ({}));
             if (verifyRes.ok && vData?.success) {
               router.push(`/enrollment/success?enrollmentId=${encodeURIComponent(eid)}&course=${encodeURIComponent(course.id)}`);
+            } else if (vData?.alreadyPaid && vData?.enrollmentId) {
+              router.push(`/enrollment/success?enrollmentId=${encodeURIComponent(vData.enrollmentId)}&course=${encodeURIComponent(course.id)}`);
             } else {
               router.push(`/enrollment/failed?enrollmentId=${encodeURIComponent(eid)}&reason=${encodeURIComponent(vData?.message || "Verification failed")}`);
             }
@@ -257,6 +266,11 @@ export default function EnrollmentForm({ course }: { course: Course }) {
         if (res.status === 503) {
           setRazorpayConfigured(false);
           setGlobalError(FRIENDLY_NOT_CONFIGURED);
+        } else if (res.status === 409 && (data as { alreadyPaid?: boolean })?.alreadyPaid) {
+          const paidId = (data as { enrollmentId?: string }).enrollmentId || eid;
+          const paidCourse = (data as { courseId?: string }).courseId || course.id;
+          router.push(`/enrollment/success?enrollmentId=${encodeURIComponent(paidId)}&course=${encodeURIComponent(paidCourse)}`);
+          return;
         } else {
           setGlobalError(data?.message || "Enrollment and payment will be available soon");
         }
@@ -293,6 +307,8 @@ export default function EnrollmentForm({ course }: { course: Course }) {
           const vData = await vr.json().catch(() => ({}));
           if (vr.ok && vData?.success) {
             router.push(`/enrollment/success?enrollmentId=${encodeURIComponent(eid)}&course=${encodeURIComponent(course.id)}`);
+          } else if (vData?.alreadyPaid && vData?.enrollmentId) {
+            router.push(`/enrollment/success?enrollmentId=${encodeURIComponent(vData.enrollmentId)}&course=${encodeURIComponent(course.id)}`);
           } else {
             router.push(`/enrollment/failed?enrollmentId=${encodeURIComponent(eid)}&reason=${encodeURIComponent(vData?.message || "Verification failed")}`);
           }

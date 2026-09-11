@@ -70,7 +70,7 @@ export async function POST(req: NextRequest) {
     // Idempotent: check if already PAID
     const { data: enrollment, error: findError } = await supabase
       .from("enrollments")
-      .select("id, payment_status, razorpay_payment_id")
+      .select("id, email, course_id, payment_status, razorpay_payment_id")
       .eq("razorpay_order_id", orderId)
       .maybeSingle();
 
@@ -101,6 +101,27 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: true, message: "Duplicate payment, ignored" });
     }
 
+    // Single-payment rule: if another PAID enrollment already exists for this
+    // email+course, keep the original and ignore (flag paymentId for manual refund review).
+    const { data: otherPaid } = await supabase
+      .from("enrollments")
+      .select("id")
+      .eq("email", ((enrollment.email as string) || "").toLowerCase().trim())
+      .eq("course_id", enrollment.course_id as string)
+      .eq("payment_status", "PAID")
+      .neq("id", enrollment.id as string)
+      .limit(1)
+      .maybeSingle();
+
+    if (otherPaid) {
+      console.warn("Webhook duplicate PAID ignored for email+course:", {
+        enrollmentId: enrollment.id,
+        keptEnrollmentId: (otherPaid as { id: string }).id,
+        paymentId,
+      });
+      return NextResponse.json({ success: true, message: "Email already enrolled, duplicate ignored (review for refund)" });
+    }
+
     // Mark as PAID — do not overwrite if already PAID (idempotent)
     const { error: updErr } = await supabase
       .from("enrollments")
@@ -114,7 +135,7 @@ export async function POST(req: NextRequest) {
     if (updErr) {
       console.error("webhook update error:", updErr);
       if (updErr.code === "23505") {
-        return NextResponse.json({ success: true, message: "Duplicate payment_id constraint, ignored" });
+        return NextResponse.json({ success: true, message: "Duplicate constraint, ignored" });
       }
       return NextResponse.json({ success: false, message: "Something went wrong. Please try again later." }, { status: 500 });
     }

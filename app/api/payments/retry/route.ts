@@ -50,7 +50,40 @@ export async function POST(req: NextRequest) {
     }
 
     if ((enrollment as { payment_status: string }).payment_status === "PAID") {
-      return NextResponse.json({ success: false, message: "Enrollment already paid" }, { status: 400 });
+      return NextResponse.json(
+        {
+          success: false,
+          alreadyPaid: true,
+          message: "This enrollment is already paid.",
+          enrollmentId: (enrollment as { id: string }).id,
+          courseId: (enrollment as { course_id: string }).course_id,
+        },
+        { status: 409 }
+      );
+    }
+
+    // Single-payment rule: block retry if another PAID enrollment exists for same email+course
+    const { data: otherPaid } = await supabase
+      .from("enrollments")
+      .select("id")
+      .eq("email", ((enrollment as { email: string }).email || "").toLowerCase().trim())
+      .eq("course_id", (enrollment as { course_id: string }).course_id)
+      .eq("payment_status", "PAID")
+      .neq("id", (enrollment as { id: string }).id)
+      .limit(1)
+      .maybeSingle();
+
+    if (otherPaid) {
+      return NextResponse.json(
+        {
+          success: false,
+          alreadyPaid: true,
+          message: "This email is already enrolled in this course. Each email can only pay once per course.",
+          enrollmentId: (otherPaid as { id: string }).id,
+          courseId: (enrollment as { course_id: string }).course_id,
+        },
+        { status: 409 }
+      );
     }
 
     const course = getCourseById((enrollment as { course_id: string }).course_id);

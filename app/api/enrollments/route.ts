@@ -53,6 +53,30 @@ export async function POST(req: NextRequest) {
       // ignore, use registry
     }
 
+    // Single-payment rule: one PAID enrollment per email+course (emails stored lowercased).
+    // Same email may still enroll in *other* courses.
+    const { data: paidExisting } = await supabase
+      .from("enrollments")
+      .select("id")
+      .eq("email", sanitized.email)
+      .eq("course_id", course.id)
+      .eq("payment_status", "PAID")
+      .limit(1)
+      .maybeSingle();
+
+    if (paidExisting) {
+      return NextResponse.json(
+        {
+          success: false,
+          alreadyPaid: true,
+          message: "This email is already enrolled in this course. Each email can only pay once per course.",
+          enrollmentId: (paidExisting as { id: string }).id,
+          courseId: course.id,
+        },
+        { status: 409 }
+      );
+    }
+
     // Idempotency: if same email+course has a PENDING enrollment within last 15 mins, reuse it
     const fifteenMinsAgo = new Date(Date.now() - 15 * 60 * 1000).toISOString();
     const { data: existing } = await supabase

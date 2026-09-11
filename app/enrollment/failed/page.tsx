@@ -27,6 +27,13 @@ function FailedContent() {
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data?.success) {
+        if (res.status === 409 && (data as { alreadyPaid?: boolean })?.alreadyPaid) {
+          const paidId = (data as { enrollmentId?: string }).enrollmentId || enrollmentId;
+          if (paidId) {
+            router.push(`/enrollment/success?enrollmentId=${encodeURIComponent(paidId)}`);
+            return;
+          }
+        }
         setErrorMsg(data?.message || "Retry failed. Please try again.");
         setRetryStatus("error");
         return;

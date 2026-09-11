@@ -88,6 +88,36 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: false, message: "This payment has already been processed" }, { status: 409 });
     }
 
+    // Single-payment rule: signature is valid, but another PAID enrollment already
+    // exists for this email+course (e.g. double submit). Keep the original PAID
+    // and report the duplicate for manual refund review — do not create a 2nd PAID.
+    const { data: otherPaid } = await supabase
+      .from("enrollments")
+      .select("id")
+      .eq("email", (enrollment.email as string).toLowerCase().trim())
+      .eq("course_id", enrollment.course_id as string)
+      .eq("payment_status", "PAID")
+      .neq("id", enrollment.id as string)
+      .limit(1)
+      .maybeSingle();
+
+    if (otherPaid) {
+      console.warn("Duplicate PAID attempt blocked for email+course:", {
+        enrollmentId: enrollment.id,
+        keptEnrollmentId: (otherPaid as { id: string }).id,
+        paymentId: razorpay_payment_id,
+      });
+      return NextResponse.json(
+        {
+          success: false,
+          alreadyPaid: true,
+          message: "This email is already enrolled in this course. Each email can only pay once per course.",
+          enrollmentId: (otherPaid as { id: string }).id,
+        },
+        { status: 409 }
+      );
+    }
+
     // Update to PAID
     const { error: updateError, data: updated } = await supabase
       .from("enrollments")
@@ -103,8 +133,19 @@ export async function POST(req: NextRequest) {
 
     if (updateError) {
       console.error("update to PAID error:", updateError);
-      // If unique constraint violation on razorpay_payment_id
+      // Unique violations: razorpay_payment_id reuse OR single-PAID-per-email+course race
       if (updateError.code === "23505") {
+        if ((updateError.message || "").includes("uq_enrollments_paid_email_course")) {
+          return NextResponse.json(
+            {
+              success: false,
+              alreadyPaid: true,
+              message: "This email is already enrolled in this course. Each email can only pay once per course.",
+              enrollmentId: enrollment.id,
+            },
+            { status: 409 }
+          );
+        }
         return NextResponse.json({ success: false, message: "This payment has already been processed" }, { status: 409 });
       }
       return NextResponse.json({ success: false, message: FRIENDLY_GENERIC }, { status: 500 });
