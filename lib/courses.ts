@@ -17,6 +17,8 @@ export type Course = {
   duration: string;
   level: string;
   isActive: boolean;
+  /** Temporarily gate new enrollments without hiding the course page. */
+  enrollmentOpen: boolean;
 };
 
 export const COURSES: Course[] = [
@@ -34,6 +36,7 @@ export const COURSES: Course[] = [
     duration: "7 Days · 14+ Hours",
     level: "Beginner",
     isActive: true,
+    enrollmentOpen: true,
   },
   {
     id: "ai-tools-bootcamp",
@@ -49,6 +52,8 @@ export const COURSES: Course[] = [
     duration: "7 Days · 14+ Hours",
     level: "Beginner",
     isActive: true,
+    // Enrollment paused for now — flip back to true to reopen.
+    enrollmentOpen: false,
   },
 ];
 

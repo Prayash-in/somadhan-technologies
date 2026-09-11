@@ -1,7 +1,4 @@
 import Link from "next/link";
-import EnrollmentForm from "@/components/EnrollmentForm";
-import EnrollButton from "@/components/EnrollButton";
-import { getCourseById } from "@/lib/courses";
 
 export const metadata = {
   title: "7-Day AI Tools Bootcamp",
@@ -296,11 +293,9 @@ export default function AIToolsBootcampPage() {
             </div>
 
             <div className="mt-5 flex flex-wrap items-center gap-3">
-              <EnrollButton
-                variant="hero"
-                label="Enroll Now — ₹299"
-                className="inline-flex items-center justify-center rounded-full bg-[#06b6d4] px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-black/20 transition hover:bg-[#0891b2]"
-              />
+              <span className="inline-flex items-center justify-center rounded-full border border-white/25 bg-white/10 px-7 py-3 text-sm font-semibold text-white/80 backdrop-blur">
+                Enrollment Closed
+              </span>
               <a
                 href="#course-outline"
                 className="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-white hover:bg-white/10"
@@ -308,6 +303,9 @@ export default function AIToolsBootcampPage() {
                 View Details
               </a>
             </div>
+            <p className="mt-3 text-xs text-white/50">
+              Admissions are paused for now — join the Agentic AI Bootcamp instead.
+            </p>
 
             <p className="mt-3 text-xs text-white/50">
               Next cohort: Coming soon · Limited seats · Live + recorded
@@ -499,9 +497,16 @@ export default function AIToolsBootcampPage() {
             </div>
           </section>
 
-          {/* Enrollment — hidden until Enroll Now is clicked */}
-          <section id="enroll-form-section" className="hidden scroll-mt-28">
-            <EnrollmentForm course={getCourseById("ai-tools-bootcamp")!} />
+          {/* Enrollment paused — form hidden until admissions reopen */}
+          <section className="rounded-2xl border border-line bg-white p-6 sm:p-8">
+            <h2 className="font-display text-lg font-semibold tracking-tight">Enrollment Currently Closed</h2>
+            <p className="mt-2 text-sm leading-relaxed text-ink-soft">
+              Admissions for the 7-Day AI Tools Bootcamp are paused for now. In the meantime, you can join the{" "}
+              <Link href="/training/agentic-ai-bootcamp" className="font-medium text-accent hover:text-accent-deep">
+                7-Days Agentic AI Bootcamp
+              </Link>{" "}
+              — enrollment is open.
+            </p>
           </section>
 
           {/* FAQ */}
@@ -631,14 +636,16 @@ export default function AIToolsBootcampPage() {
                 </div>
                 <p className="mt-1 text-center text-xs text-ink-soft">Inclusive · One-time · 50% off MRP ₹599</p>
 
-                <EnrollButton
-                  variant="sidebar"
-                  label="Enroll Now — ₹299"
-                  className="mt-6 flex w-full items-center justify-center rounded-full bg-[#06b6d4] px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-md transition hover:bg-[#0891b2]"
-                />
-                <p className="mt-3 text-center text-xs font-medium text-ink-soft">
-                  Secure payment via Razorpay · <span className="line-through decoration-ink-soft/40">₹599</span> ₹299
-                </p>
+                <div className="mt-6 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-center">
+                  <p className="text-sm font-semibold text-amber-900">Enrollment Closed</p>
+                  <p className="mt-1 text-xs leading-relaxed text-amber-900/80">
+                    Admissions are paused for now. Check back soon or{" "}
+                    <Link href="/contact" className="font-medium underline">
+                      contact us
+                    </Link>
+                    .
+                  </p>
+                </div>
               </div>
 
               <div className="border-t border-line bg-cream/50 px-6 py-4">

@@ -91,6 +91,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: false, message: "Course not found" }, { status: 400 });
     }
 
+    if (!course.enrollmentOpen) {
+      return NextResponse.json(
+        { success: false, message: "Enrollment for this course is currently closed. Please check back soon." },
+        { status: 503 }
+      );
+    }
+
     // If existing order exists and is recent (e.g., within 15 min), reuse it instead of creating new
     // But spec allows retry with existing pending enrollment; we'll create a new order for reliability
     const amountPaise = course.pricePaise;

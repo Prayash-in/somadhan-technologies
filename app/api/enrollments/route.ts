@@ -32,6 +32,13 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    if (!course.enrollmentOpen) {
+      return NextResponse.json(
+        { success: false, message: "Enrollment for this course is currently closed. Please check back soon." },
+        { status: 503 }
+      );
+    }
+
     const supabase = getSupabaseServerClient();
 
     // Optional: try to fetch course price from DB if courses table exists (authoritative check)

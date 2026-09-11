@@ -292,6 +292,9 @@ export default function TrainingPage() {
                     &rarr;
                   </span>
                 </span>
+                <span className="inline-flex items-center rounded-full border border-amber-300/40 bg-amber-400/15 px-3 py-1 text-xs font-semibold text-amber-200">
+                  Admissions Paused
+                </span>
                 <span className="text-xs text-white/55">
                   Next cohort: <span className="font-semibold text-white">Coming soon</span> · Limited seats
                 </span>
