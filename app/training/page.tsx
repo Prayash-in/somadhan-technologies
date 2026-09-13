@@ -157,7 +157,7 @@ export default function TrainingPage() {
                   </span>
                 </span>
                 <span className="text-xs text-white/55">
-                  Next cohort: <span className="font-semibold text-white">Coming soon</span> · Limited seats
+                  Next cohort: <span className="font-semibold text-white">27 October 2026</span> · Limited seats
                 </span>
               </div>
             </div>

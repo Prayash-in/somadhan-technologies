@@ -322,7 +322,7 @@ export default function AgenticBootcampPage() {
             </div>
 
             <p className="mt-3 text-xs text-white/50">
-              Next cohort: Coming soon · Limited seats · Live + recorded
+              Next cohort: 27 October 2026 · Limited seats · Live + recorded
             </p>
           </div>
 

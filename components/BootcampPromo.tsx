@@ -201,7 +201,7 @@ export default function BootcampPromo() {
                   <span className="rounded-full bg-white px-2 py-0.5 text-[11px] font-bold tracking-wide text-[#ff4d6a]">50% OFF</span>
                   <span className="text-xs text-white/50">Inclusive · One-time</span>
                 </div>
-                <p className="mt-1 text-xs text-white/50">Next cohort: Coming soon · Limited seats · Live + recorded</p>
+                <p className="mt-1 text-xs text-white/50">Next cohort: 27 October 2026 · Limited seats · Live + recorded</p>
               </div>
             </div>
 
