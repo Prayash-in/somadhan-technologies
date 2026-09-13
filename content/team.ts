@@ -128,6 +128,12 @@ export const advisors: Advisor[] = [
     qualification: "B.A., L.L.B.",
     image: "/advisors/Leena Baishya.png",
   },
+  {
+    name: "Sagar Saikia",
+    role: "Corporate Relations Advisor",
+    qualification: "M.C.A., PhD (Pursuing)",
+    image: "/advisors/Sagar Saikia.png",
+  },
 ];
 
 export const values = [
