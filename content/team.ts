@@ -9,13 +9,6 @@ export type Member = {
 
 export const members: Member[] = [
   {
-    name: "Himani Patowary",
-    role: "Founder & Director",
-    initials: "HP",
-    email: "director@somadhantechnologies.in",
-    image: "/team/Himani.jpeg",
-  },
-  {
     name: "Prayash Bhagawati",
     role: "Chief Technology Officer (CTO) & Director – Projects",
     initials: "PB",

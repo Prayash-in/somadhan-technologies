@@ -21,13 +21,19 @@ const columns = [
       { href: "/contact", label: "Contact Us" },
     ],
   },
+  {
+    title: "Legal",
+    links: [
+      { href: "/refund-policy", label: "Refund & Cancellation Policy" },
+    ],
+  },
 ];
 
 export default function Footer() {
   return (
     <footer className="border-t border-line bg-cream">
       <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8">
-        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
+        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <Logo className="h-32" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-ink-soft">
