@@ -48,7 +48,11 @@ export default function RefundPolicyPage() {
             <Link href="/about" className="font-medium text-accent underline underline-offset-4 hover:text-accent-deep">
               Terms
             </Link>{" "}
-            &amp; Privacy Policy. Project-specific MSA/SOW prevails on conflict.
+            &amp;{" "}
+            <Link href="/privacy-policy" className="font-medium text-accent underline underline-offset-4 hover:text-accent-deep">
+              Privacy Policy
+            </Link>
+            . Project-specific MSA/SOW prevails on conflict.
           </p>
         </div>
       </div>

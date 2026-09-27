@@ -24,6 +24,7 @@ const columns = [
   {
     title: "Legal",
     links: [
+      { href: "/privacy-policy", label: "Privacy Policy" },
       { href: "/refund-policy", label: "Refund & Cancellation Policy" },
     ],
   },
