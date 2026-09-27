@@ -74,7 +74,7 @@ export default function PrivacyPolicyPage() {
               <div className="mt-6 rounded-xl bg-accent-soft p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent-deep">Privacy questions?</p>
                 <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                  Email <a href="mailto:hirak@somadhantechnologies.in" className="font-medium text-accent underline underline-offset-4">hirak@somadhantechnologies.in</a> (Grievance Officer) or <a href="mailto:director@somadhantechnologies.in" className="font-medium text-accent underline underline-offset-4">director@somadhantechnologies.in</a>.
+                  Email <a href="mailto:hirak.somadhantechnologies@gmail.com" className="font-medium text-accent underline underline-offset-4">hirak.somadhantechnologies@gmail.com</a> (Grievance Officer) or <a href="mailto:director@somadhantechnologies.in" className="font-medium text-accent underline underline-offset-4">director@somadhantechnologies.in</a>.
                 </p>
               </div>
             </div>
@@ -649,8 +649,8 @@ export default function PrivacyPolicyPage() {
                       </div>
                       <div>
                         <p className="m-0 text-xs font-semibold uppercase tracking-[0.14em] text-ink-soft">Email</p>
-                        <a href="mailto:hirak@somadhantechnologies.in" className="mt-1.5 inline-block text-sm font-medium">
-                          hirak@somadhantechnologies.in
+                        <a href="mailto:hirak.somadhantechnologies@gmail.com" className="mt-1.5 inline-block text-sm font-medium">
+                          hirak.somadhantechnologies@gmail.com
                         </a>
                       </div>
                       <div>
@@ -717,8 +717,8 @@ export default function PrivacyPolicyPage() {
                       director@somadhantechnologies.in
                     </a>{" "}
                     or reach our Grievance Officer at{" "}
-                    <a href="mailto:hirak@somadhantechnologies.in" className="font-medium text-paper underline underline-offset-4">
-                      hirak@somadhantechnologies.in
+                    <a href="mailto:hirak.somadhantechnologies@gmail.com" className="font-medium text-paper underline underline-offset-4">
+                      hirak.somadhantechnologies@gmail.com
                     </a>
                     .
                   </p>
