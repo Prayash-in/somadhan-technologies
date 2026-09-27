@@ -166,9 +166,6 @@ export default function ReceiptDownloader({ enrollment }: { enrollment: ReceiptE
       doc.text("System-generated receipt. Keep your Enrollment ID for support queries.", margin, y);
       y += 5;
       doc.text("Questions? director@somadhantechnologies.in", margin, y);
-      y += 5;
-      doc.setFontSize(8);
-      doc.text("Test Mode — issued against a Razorpay test payment.", margin, y);
 
       doc.save(`Somadhan-Receipt-${shortId(enrollment.id)}.pdf`);
     } catch (e) {

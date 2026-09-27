@@ -300,7 +300,7 @@ export default function RefundPolicyPage() {
                       <div>
                         <p className="m-0 text-xs font-semibold uppercase tracking-[0.14em] text-ink-soft">Email</p>
                         <a href="mailto:hirak@somadhantechnologies.in" className="mt-1.5 inline-block text-sm font-medium">
-                          hirak@somadhantechnologies.in
+                          hirak.somadhantechnologies@gmail.com
                         </a>
                       </div>
                       <div>
