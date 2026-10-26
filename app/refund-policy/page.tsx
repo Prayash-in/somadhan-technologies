@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import { ViewTransition } from "react";
+import SafeViewTransition from "@/components/SafeViewTransition";
 
 export const metadata: Metadata = {
   title: "Refund & Cancellation Policy",
@@ -26,7 +26,7 @@ const toc = [
 
 export default function RefundPolicyPage() {
   return (
-    <ViewTransition name="page">
+    <SafeViewTransition name="page">
       <PageHero
         eyebrow="Legal"
         title={
@@ -408,6 +408,6 @@ export default function RefundPolicyPage() {
           </div>
         </div>
       </div>
-    </ViewTransition>
+    </SafeViewTransition>
   );
 }

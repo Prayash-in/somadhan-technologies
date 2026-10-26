@@ -1,7 +1,7 @@
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import ArrowLink from "@/components/ArrowLink";
-import { ViewTransition } from "react";
+import SafeViewTransition from "@/components/SafeViewTransition";
 import { SatelliteGlyph, LeafGlyph, DropGlyph } from "@/components/glyphs";
 
 export const metadata = {
@@ -46,7 +46,7 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-    <ViewTransition name="page">
+    <SafeViewTransition name="page">
       <section className="mx-auto max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
         <SectionHeading
           eyebrow="Our work"
@@ -182,6 +182,6 @@ export default function ProjectsPage() {
           </div>
         </Reveal>
       </section>
-    </ViewTransition>
+    </SafeViewTransition>
   );
 }

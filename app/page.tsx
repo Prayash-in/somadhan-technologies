@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ViewTransition } from "react";
+import SafeViewTransition from "@/components/SafeViewTransition";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import ArrowLink from "@/components/ArrowLink";
@@ -106,7 +106,7 @@ const tagTones: Record<string, keyof typeof tones> = {
 
 export default function Home() {
   return (
-    <ViewTransition name="page">
+    <SafeViewTransition name="page">
       <section className="relative overflow-hidden">
         <div
           aria-hidden="true"
@@ -657,6 +657,6 @@ export default function Home() {
           </div>
         </Reveal>
       </section>
-    </ViewTransition>
+    </SafeViewTransition>
   );
 }

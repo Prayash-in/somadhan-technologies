@@ -1,6 +1,6 @@
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
-import { ViewTransition } from "react";
+import SafeViewTransition from "@/components/SafeViewTransition";
 import ContactForm from "@/components/ContactForm";
 import NewsletterForm from "@/components/NewsletterForm";
 
@@ -20,7 +20,7 @@ const channels = [
 
 export default function ContactPage() {
   return (
-    <ViewTransition name="page">
+    <SafeViewTransition name="page">
       <PageHero
         eyebrow="Contact"
         title={
@@ -112,6 +112,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-    </ViewTransition>
+    </SafeViewTransition>
   );
 }

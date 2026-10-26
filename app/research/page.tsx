@@ -1,7 +1,7 @@
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import ArrowLink from "@/components/ArrowLink";
-import { ViewTransition } from "react";
+import SafeViewTransition from "@/components/SafeViewTransition";
 import { tones } from "@/components/tone";
 import { publications, researchSteps } from "@/content/research";
 
@@ -21,7 +21,7 @@ const statusTones: Record<string, keyof typeof tones> = {
 
 export default function ResearchPage() {
   return (
-    <ViewTransition name="page">
+    <SafeViewTransition name="page">
       <PageHero
         eyebrow="Research & Innovation"
         title={
@@ -160,6 +160,6 @@ export default function ResearchPage() {
           </div>
         </Reveal>
       </section>
-    </ViewTransition>
+    </SafeViewTransition>
   );
 }

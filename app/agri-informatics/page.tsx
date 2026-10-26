@@ -2,7 +2,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import ArrowLink from "@/components/ArrowLink";
-import { ViewTransition } from "react";
+import SafeViewTransition from "@/components/SafeViewTransition";
 import { SatelliteGlyph, LeafGlyph, DropGlyph, ChainGlyph } from "@/components/glyphs";
 
 export const metadata = {
@@ -59,7 +59,7 @@ const approach = [
 
 export default function AgriInformaticsPage() {
   return (
-    <ViewTransition name="page">
+    <SafeViewTransition name="page">
       <PageHero
         eyebrow="Agri-Informatics"
         title={
@@ -168,6 +168,6 @@ export default function AgriInformaticsPage() {
           </div>
         </Reveal>
       </section>
-    </ViewTransition>
+    </SafeViewTransition>
   );
 }

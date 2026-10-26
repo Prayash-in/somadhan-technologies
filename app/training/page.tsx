@@ -2,7 +2,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import ArrowLink from "@/components/ArrowLink";
-import { ViewTransition } from "react";
+import SafeViewTransition from "@/components/SafeViewTransition";
 import Link from "next/link";
 import {
   SatelliteGlyph,
@@ -53,7 +53,7 @@ const steps = [
 
 export default function TrainingPage() {
   return (
-    <ViewTransition name="page">
+    <SafeViewTransition name="page">
       <PageHero
         eyebrow="Training & Internship"
         title={
@@ -157,7 +157,7 @@ export default function TrainingPage() {
                   </span>
                 </span>
                 <span className="text-xs text-white/55">
-                  Next cohort: <span className="font-semibold text-white">27 October 2026</span> · Limited seats
+                  Next cohort: <span className="font-semibold text-white">9 November 2026</span> · Limited seats
                 </span>
               </div>
             </div>
@@ -465,6 +465,6 @@ export default function TrainingPage() {
           </div>
         </Reveal>
       </section>
-    </ViewTransition>
+    </SafeViewTransition>
   );
 }

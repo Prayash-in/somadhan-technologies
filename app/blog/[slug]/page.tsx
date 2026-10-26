@@ -38,7 +38,7 @@ export default async function BlogPostPage({
   const tagTone = tones[tagTones[post.tag] ?? "green"];
 
   return (
-    <ViewTransition name="page">
+    <SafeViewTransition name="page">
       <article className="mx-auto max-w-3xl px-5 py-20 sm:px-8 sm:py-24">
       <Link
         href="/blog"
@@ -103,6 +103,6 @@ export default async function BlogPostPage({
         </div>
       </footer>
       </article>
-    </ViewTransition>
+    </SafeViewTransition>
   );
 }

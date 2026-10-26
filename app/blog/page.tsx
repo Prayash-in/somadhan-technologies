@@ -1,7 +1,7 @@
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import Link from "next/link";
-import { ViewTransition } from "react";
+import SafeViewTransition from "@/components/SafeViewTransition";
 import { tones } from "@/components/tone";
 import { posts } from "@/content/posts";
 
@@ -20,7 +20,7 @@ const tagTones: Record<string, keyof typeof tones> = {
 
 export default function BlogPage() {
   return (
-    <ViewTransition name="page">
+    <SafeViewTransition name="page">
       <PageHero
         eyebrow="Insights"
 title={
@@ -76,6 +76,6 @@ title={
           })}
         </div>
       </section>
-    </ViewTransition>
+    </SafeViewTransition>
   );
 }

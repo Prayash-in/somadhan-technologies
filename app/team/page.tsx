@@ -1,7 +1,7 @@
 import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import { MailGlyph } from "@/components/glyphs";
-import { ViewTransition } from "react";
+import SafeViewTransition from "@/components/SafeViewTransition";
 import { tones } from "@/components/tone";
 import { members, advisors, values } from "@/content/team";
 
@@ -17,7 +17,7 @@ const valueTones = ["green", "gold", "sky", "terra"] as const;
 
 export default function TeamPage() {
   return (
-    <ViewTransition name="page">
+    <SafeViewTransition name="page">
       <PageHero
         eyebrow="Team & Advisors"
         title={
@@ -154,6 +154,6 @@ export default function TeamPage() {
           </div>
         </div>
       </section>
-    </ViewTransition>
+    </SafeViewTransition>
   );
 }

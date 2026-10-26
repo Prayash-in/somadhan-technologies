@@ -2,7 +2,7 @@ import PageHero from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import ArrowLink from "@/components/ArrowLink";
 import SectionHeading from "@/components/SectionHeading";
-import { ViewTransition } from "react";
+import SafeViewTransition from "@/components/SafeViewTransition";
 import {
   LanguageGlyph,
   VoiceGlyph,
@@ -30,7 +30,7 @@ const featureIcons = {
 
 export default function MultilingualAIPage() {
   return (
-    <ViewTransition name="page">
+    <SafeViewTransition name="page">
       <PageHero
         eyebrow="Multilingual AI"
         title={
@@ -166,6 +166,6 @@ export default function MultilingualAIPage() {
           </div>
         </Reveal>
       </section>
-    </ViewTransition>
+    </SafeViewTransition>
   );
 }
